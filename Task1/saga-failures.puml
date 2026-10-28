@@ -1,0 +1,103 @@
+@startuml
+title Saga-хореография «Оформление заказа» — ошибочные сценарии и компенсации
+
+autonumber
+skinparam sequenceMessageAlign center
+skinparam responseMessageBelowArrow true
+
+actor "Покупатель" as C
+participant "Order\nService" as OS
+queue "Kafka" as K
+participant "Inventory\nService" as IS
+participant "Payment\nService" as PS
+participant "Платёжный\nшлюз" as PG
+participant "Delivery\nService" as DS
+participant "Логистический\nпровайдер" as LP
+participant "Notification\nService" as NS
+
+OS -> K : **OrderCreated**
+K -> IS : OrderCreated
+
+alt Сценарий A. Товара нет в нужном количестве
+    IS -> IS : Остатков не хватает,\nрезерв не создаётся
+    IS -> K : **StockReservationFailed** {orderId, unavailableItems}
+    K -> OS : StockReservationFailed
+    OS -> OS : Статус «Отменён: нет в наличии»
+    OS -> K : **OrderCancelled** {orderId, reason: OUT_OF_STOCK}
+    K -> NS : OrderCancelled
+    NS -> C : «Товара нет в наличии, заказ отменён»
+
+else Товар зарезервирован
+    IS -> K : **StockReserved**
+    K -> OS : StockReserved
+    K -> PS : StockReserved
+    PS -> PG : Списание / платёжная сессия
+
+    alt Сценарий B. Оплата не прошла (отказ банка, нет средств, сессия истекла за 15 мин)
+        PG --> PS : Отказ / таймаут сессии
+        PS -> K : **PaymentFailed** {orderId, reason}
+        K -> IS : PaymentFailed
+        IS -> IS : Компенсация: снять резерв
+        IS -> K : **StockReleased** {orderId}
+        K -> OS : PaymentFailed
+        OS -> OS : Статус «Отменён: оплата не прошла»
+        OS -> K : **OrderCancelled** {orderId, reason: PAYMENT_FAILED}
+        K -> NS : OrderCancelled
+        NS -> C : «Оплата не прошла, заказ отменён»
+
+    else Оплата прошла
+        PG --> PS : Успех
+        PS -> K : **PaymentSucceeded**
+        K -> OS : PaymentSucceeded
+        K -> IS : PaymentSucceeded
+        IS -> K : **StockCommitted**
+        K -> DS : PaymentSucceeded
+
+        loop Retry с экспоненциальной задержкой (до 5 попыток / 30 мин)
+            DS -> LP : Создать заявку (таймаут 3 с, circuit breaker)
+            LP --> DS : 5xx / таймаут / fallback от egress-прокси
+        end
+        note over DS
+            Заказ уже оплачен, поэтому сначала пробуем довести его до доставки:
+            ретраи, резервный провайдер. Компенсация — только после исчерпания попыток.
+        end note
+
+        alt Сценарий C. Заявку на доставку создать не удалось
+            DS -> K : **DeliveryCreationFailed** {orderId, reason}
+            K -> PS : DeliveryCreationFailed
+            PS -> PG : Возврат средств
+            K -> IS : DeliveryCreationFailed
+            IS -> IS : Компенсация: снять резерв
+            IS -> K : **StockReleased** {orderId}
+
+            alt Возврат успешен
+                PG --> PS : Refund OK
+                PS -> K : **RefundSucceeded** {orderId, refundId, amount}
+                K -> OS : RefundSucceeded
+                OS -> OS : Статус «Отменён, деньги возвращены»
+                OS -> K : **OrderCancelled** {orderId, reason: DELIVERY_UNAVAILABLE}
+                K -> NS : OrderCancelled
+                NS -> C : «Доставка недоступна, деньги возвращены»
+            else Возврат не прошёл
+                PG --> PS : Refund error
+                PS -> K : **RefundFailed** {orderId, reason}
+                K -> OS : RefundFailed
+                OS -> OS : Статус «Требует внимания»,\nзадача в поддержку (ручной возврат)
+                K -> NS : RefundFailed
+                NS -> C : «Возврат обрабатывается, с вами свяжется поддержка»
+            end
+        else Заявка создана
+            DS -> K : **DeliveryCreated** — далее как в успешном сценарии
+        end
+    end
+end
+
+note across
+    Общие механизмы надёжности для всех участников саги:
+    • Transactional Outbox — изменение состояния и публикация события в одной транзакции;
+    • Inbox / идемпотентные обработчики по eventId — Kafka гарантирует at-least-once;
+    • ключ партиции = orderId — события одного заказа обрабатываются по порядку;
+    • резерв на складе с TTL — страховка, если сообщение о компенсации задержалось;
+    • DLQ + алерты для событий, которые не удалось обработать.
+end note
+@enduml

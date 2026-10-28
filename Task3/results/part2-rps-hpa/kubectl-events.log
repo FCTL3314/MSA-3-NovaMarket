@@ -1,0 +1,30 @@
+TIME                   KIND                      NAME                            REASON                           MESSAGE
+2026-10-28T08:51:28Z   HorizontalPodAutoscaler   scaletestapp-rps                SuccessfulRescale                New size: 2; reason: pods metric http_requests_per_second above target
+2026-10-28T08:51:29Z   ReplicaSet                scaletestapp-59796c6f85         SuccessfulCreate                 Created pod: scaletestapp-59796c6f85-f7hf5
+2026-10-28T08:51:58Z   ReplicaSet                scaletestapp-59796c6f85         SuccessfulCreate                 Created pod: scaletestapp-59796c6f85-9d6ds
+2026-10-28T08:51:58Z   HorizontalPodAutoscaler   scaletestapp-rps                SuccessfulRescale                New size: 4; reason: pods metric http_requests_per_second above target
+2026-10-28T08:51:58Z   ReplicaSet                scaletestapp-59796c6f85         SuccessfulCreate                 Created pod: scaletestapp-59796c6f85-vwgw4
+2026-10-28T08:52:28Z   HorizontalPodAutoscaler   scaletestapp-rps                SuccessfulRescale                New size: 6; reason: pods metric http_requests_per_second above target
+2026-10-28T08:52:29Z   ReplicaSet                scaletestapp-59796c6f85         SuccessfulCreate                 Created pod: scaletestapp-59796c6f85-78lvf
+2026-10-28T08:52:29Z   ReplicaSet                scaletestapp-59796c6f85         SuccessfulCreate                 Created pod: scaletestapp-59796c6f85-vd6n4
+2026-10-28T08:52:59Z   HorizontalPodAutoscaler   scaletestapp-rps                SuccessfulRescale                New size: 8; reason: pods metric http_requests_per_second above target
+2026-10-28T08:53:00Z   ReplicaSet                scaletestapp-59796c6f85         SuccessfulCreate                 Created pod: scaletestapp-59796c6f85-v28b2
+2026-10-28T08:53:00Z   ReplicaSet                scaletestapp-59796c6f85         SuccessfulCreate                 Created pod: scaletestapp-59796c6f85-qqzvx
+2026-10-28T08:53:29Z   ReplicaSet                scaletestapp-59796c6f85         SuccessfulCreate                 (combined from similar events): Created pod: scaletestapp-59796c6f85-h6m6t
+2026-10-28T08:53:29Z   ReplicaSet                scaletestapp-59796c6f85         SuccessfulCreate                 Created pod: scaletestapp-59796c6f85-wsmqf
+2026-10-28T08:53:29Z   HorizontalPodAutoscaler   scaletestapp-rps                SuccessfulRescale                New size: 10; reason: pods metric http_requests_per_second above target
+2026-10-28T08:58:00Z   ReplicaSet                scaletestapp-59796c6f85         SuccessfulDelete                 Deleted pod: scaletestapp-59796c6f85-wsmqf
+2026-10-28T08:58:00Z   ReplicaSet                scaletestapp-59796c6f85         SuccessfulDelete                 Deleted pod: scaletestapp-59796c6f85-h6m6t
+2026-10-28T08:58:00Z   HorizontalPodAutoscaler   scaletestapp-rps                SuccessfulRescale                New size: 8; reason: All metrics below target
+2026-10-28T08:58:30Z   ReplicaSet                scaletestapp-59796c6f85         SuccessfulDelete                 Deleted pod: scaletestapp-59796c6f85-9bgqx
+2026-10-28T08:58:30Z   ReplicaSet                scaletestapp-59796c6f85         SuccessfulDelete                 Deleted pod: scaletestapp-59796c6f85-78lvf
+2026-10-28T08:58:30Z   HorizontalPodAutoscaler   scaletestapp-rps                SuccessfulRescale                New size: 6; reason: All metrics below target
+2026-10-28T08:59:00Z   ReplicaSet                scaletestapp-59796c6f85         SuccessfulDelete                 Deleted pod: scaletestapp-59796c6f85-f7hf5
+2026-10-28T08:59:00Z   HorizontalPodAutoscaler   scaletestapp-rps                SuccessfulRescale                New size: 4; reason: All metrics below target
+2026-10-28T08:59:00Z   ReplicaSet                scaletestapp-59796c6f85         SuccessfulDelete                 Deleted pod: scaletestapp-59796c6f85-v28b2
+2026-10-28T08:59:30Z   HorizontalPodAutoscaler   scaletestapp-rps                SuccessfulRescale                New size: 2; reason: All metrics below target
+2026-10-28T08:59:30Z   ReplicaSet                scaletestapp-59796c6f85         SuccessfulDelete                 Deleted pod: scaletestapp-59796c6f85-vd6n4
+2026-10-28T08:59:30Z   ReplicaSet                scaletestapp-59796c6f85         SuccessfulDelete                 Deleted pod: scaletestapp-59796c6f85-vwgw4
+2026-10-28T09:00:01Z   HorizontalPodAutoscaler   scaletestapp-rps                SuccessfulRescale                (combined from similar events): New size: 1; reason: All metrics below target
+2026-10-28T09:00:01Z   ReplicaSet                scaletestapp-59796c6f85         SuccessfulDelete                 Deleted pod: scaletestapp-59796c6f85-qqzvx
+2026-10-28T09:00:01Z   Deployment                scaletestapp                    ScalingReplicaSet                (combined from similar events): Scaled down replica set scaletestapp-59796c6f85 from 2 to 1

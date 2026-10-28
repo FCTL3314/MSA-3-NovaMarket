@@ -1,0 +1,7 @@
+[2026-10-28 08:40:44,121] 99f6fb34aea8/INFO/locust.main: Starting Locust 2.47.0
+[2026-10-28 08:40:44,121] 99f6fb34aea8/INFO/locust.main: Starting web interface at http://0.0.0.0:8089, press enter to open your default browser.
+[2026-10-28 08:40:44,126] 99f6fb34aea8/INFO/locust.main: Run time limit set to 420 seconds
+[2026-10-28 08:40:44,128] 99f6fb34aea8/INFO/locust.runners: Ramping to 1000 users at a rate of 5.00 per second
+[2026-10-28 08:44:03,841] 99f6fb34aea8/INFO/locust.runners: All users spawned: {"WebsiteUser": 1000} (1000 total users)
+[2026-10-28 08:47:44,007] 99f6fb34aea8/INFO/locust.main: --run-time limit reached, stopping test
+[2026-10-28 08:47:44,071] 99f6fb34aea8/INFO/locust.main: --autoquit not specified, leaving web ui running indefinitely

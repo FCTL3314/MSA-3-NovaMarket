@@ -1,0 +1,228 @@
+===== 2026-10-28 11:40:44 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 33%/80%   1     10    1     55s
+scaletestapp   1/1   1     1     5m6s
+scaletestapp-5f9b6b6ff-h22kv   1m    6Mi   
+===== 2026-10-28 11:40:59 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 33%/80%   1     10    1     70s
+scaletestapp   1/1   1     1     5m21s
+scaletestapp-5f9b6b6ff-h22kv   1m    7Mi   
+===== 2026-10-28 11:41:14 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 37%/80%   1     10    1     85s
+scaletestapp   1/1   1     1     5m36s
+scaletestapp-5f9b6b6ff-h22kv   9m    7Mi   
+===== 2026-10-28 11:41:29 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 39%/80%   1     10    1     100s
+scaletestapp   1/1   1     1     5m51s
+scaletestapp-5f9b6b6ff-h22kv   21m   10Mi   
+===== 2026-10-28 11:41:44 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 51%/80%   1     10    1     115s
+scaletestapp   1/1   1     1     6m6s
+scaletestapp-5f9b6b6ff-h22kv   29m   10Mi   
+===== 2026-10-28 11:41:59 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 52%/80%   1     10    1     2m10s
+scaletestapp   1/1   1     1     6m21s
+scaletestapp-5f9b6b6ff-h22kv   40m   14Mi   
+===== 2026-10-28 11:42:14 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 74%/80%   1     10    1     2m25s
+scaletestapp   1/1   1     1     6m37s
+scaletestapp-5f9b6b6ff-h22kv   37m   15Mi   
+===== 2026-10-28 11:42:30 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 75%/80%   1     10    1     2m41s
+scaletestapp   1/1   1     1     6m52s
+scaletestapp-5f9b6b6ff-h22kv   27m   16Mi   
+===== 2026-10-28 11:42:45 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 81%/80%   1     10    1     2m56s
+scaletestapp   1/1   1     1     7m7s
+scaletestapp-5f9b6b6ff-h22kv   56m   20Mi   
+===== 2026-10-28 11:43:00 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 104%/80%   1     10    1     3m11s
+scaletestapp   2/2   2     2     7m22s
+scaletestapp-5f9b6b6ff-h22kv   57m   25Mi   
+===== 2026-10-28 11:43:15 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 128%/80%   1     10    2     3m26s
+scaletestapp   2/2   2     2     7m37s
+scaletestapp-5f9b6b6ff-h22kv   64m   27Mi   
+scaletestapp-5f9b6b6ff-rwn6f   4m    9Mi    
+===== 2026-10-28 11:43:30 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 93%/80%   1     10    2     3m41s
+scaletestapp   3/3   3     3     7m52s
+scaletestapp-5f9b6b6ff-h22kv   56m   27Mi   
+scaletestapp-5f9b6b6ff-rwn6f   4m    9Mi    
+===== 2026-10-28 11:43:45 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 93%/80%   1     10    3     3m56s
+scaletestapp   3/3   3     3     8m7s
+scaletestapp-5f9b6b6ff-rs9nd   18m   12Mi   
+scaletestapp-5f9b6b6ff-rwn6f   6m    10Mi   
+===== 2026-10-28 11:44:00 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 57%/80%   1     10    3     4m12s
+scaletestapp   3/3   3     3     8m23s
+scaletestapp-5f9b6b6ff-h22kv   11m   8Mi    
+scaletestapp-5f9b6b6ff-rs9nd   31m   16Mi   
+scaletestapp-5f9b6b6ff-rwn6f   25m   16Mi   
+===== 2026-10-28 11:44:16 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 69%/80%   1     10    3     4m27s
+scaletestapp   3/3   3     3     8m38s
+scaletestapp-5f9b6b6ff-h22kv   12m   14Mi   
+scaletestapp-5f9b6b6ff-rs9nd   31m   19Mi   
+scaletestapp-5f9b6b6ff-rwn6f   33m   21Mi   
+===== 2026-10-28 11:44:31 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 91%/80%   1     10    3     4m42s
+scaletestapp   4/4   4     4     8m53s
+scaletestapp-5f9b6b6ff-h22kv   12m   14Mi   
+scaletestapp-5f9b6b6ff-rs9nd   30m   21Mi   
+scaletestapp-5f9b6b6ff-rwn6f   32m   23Mi   
+===== 2026-10-28 11:44:46 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 98%/80%   1     10    4     4m57s
+scaletestapp   4/4   4     4     9m8s
+scaletestapp-5f9b6b6ff-h22kv   13m   16Mi   
+scaletestapp-5f9b6b6ff-rs9nd   32m   21Mi   
+scaletestapp-5f9b6b6ff-rwn6f   32m   23Mi   
+scaletestapp-5f9b6b6ff-x2d2t   2m    6Mi    
+===== 2026-10-28 11:45:01 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 84%/80%   1     10    4     5m12s
+scaletestapp   4/4   4     4     9m23s
+scaletestapp-5f9b6b6ff-h22kv   12m   16Mi   
+scaletestapp-5f9b6b6ff-rs9nd   33m   23Mi   
+scaletestapp-5f9b6b6ff-rwn6f   32m   23Mi   
+scaletestapp-5f9b6b6ff-x2d2t   1m    7Mi    
+===== 2026-10-28 11:45:16 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 88%/80%   1     10    4     5m27s
+scaletestapp   4/4   4     4     9m38s
+scaletestapp-5f9b6b6ff-h22kv   14m   16Mi   
+scaletestapp-5f9b6b6ff-rs9nd   31m   23Mi   
+scaletestapp-5f9b6b6ff-rwn6f   32m   27Mi   
+scaletestapp-5f9b6b6ff-x2d2t   1m    7Mi    
+===== 2026-10-28 11:45:31 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 94%/80%   1     10    4     5m43s
+scaletestapp   5/5   5     5     9m54s
+scaletestapp-5f9b6b6ff-h22kv   13m   16Mi   
+scaletestapp-5f9b6b6ff-rs9nd   33m   25Mi   
+scaletestapp-5f9b6b6ff-rwn6f   35m   27Mi   
+scaletestapp-5f9b6b6ff-x2d2t   1m    8Mi    
+===== 2026-10-28 11:45:47 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 96%/80%   1     10    5     5m58s
+scaletestapp   5/5   5     5     10m
+scaletestapp-5f9b6b6ff-h22kv   13m   16Mi   
+scaletestapp-5f9b6b6ff-rs9nd   33m   25Mi   
+scaletestapp-5f9b6b6ff-rwn6f   32m   27Mi   
+scaletestapp-5f9b6b6ff-x2d2t   1m    8Mi    
+scaletestapp-5f9b6b6ff-xc8pz   2m    6Mi    
+===== 2026-10-28 11:46:02 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 84%/80%   1     10    5     6m13s
+scaletestapp   5/5   5     5     10m
+scaletestapp-5f9b6b6ff-h22kv   13m   16Mi   
+scaletestapp-5f9b6b6ff-rs9nd   31m   27Mi   
+scaletestapp-5f9b6b6ff-rwn6f   32m   28Mi   
+scaletestapp-5f9b6b6ff-x2d2t   1m    7Mi    
+scaletestapp-5f9b6b6ff-xc8pz   1m    9Mi    
+===== 2026-10-28 11:46:17 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 90%/80%   1     10    5     6m28s
+scaletestapp   6/6   6     6     10m
+scaletestapp-5f9b6b6ff-h22kv   13m   16Mi   
+scaletestapp-5f9b6b6ff-rs9nd   30m   28Mi   
+scaletestapp-5f9b6b6ff-rwn6f   34m   28Mi   
+scaletestapp-5f9b6b6ff-x2d2t   1m    8Mi    
+scaletestapp-5f9b6b6ff-xc8pz   1m    9Mi    
+===== 2026-10-28 11:46:32 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 92%/80%   1     10    6     6m43s
+scaletestapp   6/6   6     6     10m
+scaletestapp-5f9b6b6ff-h22kv   13m   18Mi   
+scaletestapp-5f9b6b6ff-hbz92   2m    6Mi    
+scaletestapp-5f9b6b6ff-rs9nd   32m   28Mi   
+scaletestapp-5f9b6b6ff-rwn6f   34m   28Mi   
+scaletestapp-5f9b6b6ff-x2d2t   1m    9Mi    
+scaletestapp-5f9b6b6ff-xc8pz   1m    9Mi    
+===== 2026-10-28 11:46:47 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 84%/80%   1     10    6     6m58s
+scaletestapp   6/6   6     6     11m
+scaletestapp-5f9b6b6ff-h22kv   12m   18Mi   
+scaletestapp-5f9b6b6ff-hbz92   1m    9Mi    
+scaletestapp-5f9b6b6ff-rs9nd   30m   29Mi   
+scaletestapp-5f9b6b6ff-rwn6f   32m   26Mi   
+scaletestapp-5f9b6b6ff-x2d2t   1m    9Mi    
+scaletestapp-5f9b6b6ff-xc8pz   1m    9Mi    
+===== 2026-10-28 11:47:02 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 85%/80%   1     10    6     7m13s
+scaletestapp   6/6   6     6     11m
+scaletestapp-5f9b6b6ff-h22kv   12m   18Mi   
+scaletestapp-5f9b6b6ff-hbz92   1m    8Mi    
+scaletestapp-5f9b6b6ff-rs9nd   29m   27Mi   
+scaletestapp-5f9b6b6ff-rwn6f   30m   26Mi   
+scaletestapp-5f9b6b6ff-x2d2t   1m    10Mi   
+scaletestapp-5f9b6b6ff-xc8pz   1m    10Mi   
+===== 2026-10-28 11:47:18 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 83%/80%   1     10    6     7m29s
+scaletestapp   6/6   6     6     11m
+scaletestapp-5f9b6b6ff-h22kv   12m   19Mi   
+scaletestapp-5f9b6b6ff-hbz92   1m    9Mi    
+scaletestapp-5f9b6b6ff-rs9nd   30m   27Mi   
+scaletestapp-5f9b6b6ff-rwn6f   31m   26Mi   
+scaletestapp-5f9b6b6ff-x2d2t   1m    10Mi   
+scaletestapp-5f9b6b6ff-xc8pz   1m    10Mi   
+===== 2026-10-28 11:47:33 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 85%/80%   1     10    6     7m44s
+scaletestapp   6/6   6     6     11m
+scaletestapp-5f9b6b6ff-h22kv   11m   20Mi   
+scaletestapp-5f9b6b6ff-hbz92   1m    9Mi    
+scaletestapp-5f9b6b6ff-rs9nd   28m   27Mi   
+scaletestapp-5f9b6b6ff-rwn6f   29m   27Mi   
+scaletestapp-5f9b6b6ff-x2d2t   1m    9Mi    
+scaletestapp-5f9b6b6ff-xc8pz   1m    11Mi   
+===== 2026-10-28 11:47:48 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 87%/80%   1     10    6     7m59s
+scaletestapp   6/6   6     6     12m
+scaletestapp-5f9b6b6ff-h22kv   11m   20Mi   
+scaletestapp-5f9b6b6ff-hbz92   1m    9Mi    
+scaletestapp-5f9b6b6ff-rs9nd   28m   28Mi   
+scaletestapp-5f9b6b6ff-rwn6f   30m   27Mi   
+scaletestapp-5f9b6b6ff-x2d2t   1m    10Mi   
+scaletestapp-5f9b6b6ff-xc8pz   1m    11Mi   
+===== 2026-10-28 11:48:03 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 89%/80%   1     10    6     8m14s
+scaletestapp   7/7   7     7     12m
+scaletestapp-5f9b6b6ff-h22kv   11m   20Mi   
+scaletestapp-5f9b6b6ff-hbz92   1m    9Mi    
+scaletestapp-5f9b6b6ff-rs9nd   29m   28Mi   
+scaletestapp-5f9b6b6ff-rwn6f   30m   27Mi   
+scaletestapp-5f9b6b6ff-x2d2t   1m    10Mi   
+scaletestapp-5f9b6b6ff-xc8pz   2m    12Mi   
+===== 2026-10-28 11:48:18 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 90%/80%   1     10    7     8m29s
+scaletestapp   7/7   7     7     12m
+scaletestapp-5f9b6b6ff-g8ng6   2m    7Mi    
+scaletestapp-5f9b6b6ff-h22kv   2m    21Mi   
+scaletestapp-5f9b6b6ff-hbz92   2m    9Mi    
+scaletestapp-5f9b6b6ff-rs9nd   3m    28Mi   
+scaletestapp-5f9b6b6ff-rwn6f   6m    27Mi   
+scaletestapp-5f9b6b6ff-x2d2t   2m    10Mi   
+scaletestapp-5f9b6b6ff-xc8pz   2m    12Mi   
+===== 2026-10-28 11:48:33 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 83%/80%   1     10    7     8m44s
+scaletestapp   7/7   7     7     12m
+scaletestapp-5f9b6b6ff-g8ng6   2m    8Mi    
+scaletestapp-5f9b6b6ff-h22kv   2m    22Mi   
+scaletestapp-5f9b6b6ff-hbz92   1m    9Mi    
+scaletestapp-5f9b6b6ff-rs9nd   1m    28Mi   
+scaletestapp-5f9b6b6ff-rwn6f   1m    27Mi   
+scaletestapp-5f9b6b6ff-x2d2t   2m    10Mi   
+scaletestapp-5f9b6b6ff-xc8pz   2m    12Mi   
+===== 2026-10-28 11:48:49 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 85%/80%   1     10    7     9m
+scaletestapp   7/7   7     7     13m
+scaletestapp-5f9b6b6ff-g8ng6   2m    9Mi    
+scaletestapp-5f9b6b6ff-h22kv   2m    22Mi   
+scaletestapp-5f9b6b6ff-hbz92   2m    12Mi   
+scaletestapp-5f9b6b6ff-rs9nd   1m    28Mi   
+scaletestapp-5f9b6b6ff-rwn6f   2m    27Mi   
+scaletestapp-5f9b6b6ff-x2d2t   2m    9Mi    
+scaletestapp-5f9b6b6ff-xc8pz   2m    12Mi   
+===== 2026-10-28 11:49:04 =====
+scaletestapp-memory   Deployment/scaletestapp   memory: 87%/80%   1     10    7     9m15s
+scaletestapp   7/7   7     7     13m
+scaletestapp-5f9b6b6ff-g8ng6   1m    9Mi    
+scaletestapp-5f9b6b6ff-h22kv   1m    22Mi   
+scaletestapp-5f9b6b6ff-hbz92   2m    12Mi   
+scaletestapp-5f9b6b6ff-rs9nd   1m    28Mi   
+scaletestapp-5f9b6b6ff-rwn6f   1m    27Mi   
+scaletestapp-5f9b6b6ff-x2d2t   2m    9Mi    
+scaletestapp-5f9b6b6ff-xc8pz   2m    15Mi   

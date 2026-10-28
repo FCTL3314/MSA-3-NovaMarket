@@ -1,0 +1,78 @@
+@startuml
+!include <C4/C4_Container>
+
+LAYOUT_TOP_DOWN()
+skinparam wrapWidth 220
+skinparam maxMessageSize 220
+
+title NovaMarket — контейнерная диаграмма (C2): история покупок на CQRS
+
+AddElementTag("new", $bgColor="#2E8B57", $borderColor="#1D5E3A", $legendText="добавлено для истории покупок")
+AddRelTag("new", $textColor="#1D5E3A", $lineColor="#2E8B57", $legendText="новые связи")
+
+Person(customer, "Покупатель", "Смотрит историю покупок, скачивает чек, оставляет отзыв, повторяет заказ")
+
+System_Ext(payment_gw, "Платёжный шлюз", "Платежи, возвраты")
+System_Ext(ofd, "ОФД / фискальный сервис", "Формирование фискальных чеков (54-ФЗ)")
+System_Ext(logistics, "Логистический провайдер", "Статусы доставки")
+
+System_Boundary(nova, "NovaMarket") {
+    Container(mobile, "Мобильное приложение", "iOS / Android", "Личный кабинет: история покупок и детали заказа")
+    Container(gateway, "API Gateway", "NGINX", "Маршрутизация, JWT, rate limiting; запросы на чтение истории — в Order History Service")
+
+    Container(order, "Order Service", "Java / Spring Boot", "Write-модель: создание заказа, статусы, Saga оформления")
+    ContainerDb(order_db, "Order DB", "PostgreSQL", "Заказы (источник правды), outbox")
+
+    Container(payment, "Payment Service", "Java / Spring Boot", "Платежи, возвраты, выпуск фискального чека")
+    ContainerDb(payment_db, "Payment DB", "PostgreSQL", "Платежи, outbox")
+
+    Container(delivery, "Delivery Service", "Go", "Заявки на доставку, трек-номера, статусы")
+    Container(catalog, "Catalog Service", "Go", "Товары, актуальные цены и наличие")
+    Container(review, "Review Service", "Go", "Отзывы о товарах")
+    Container(cart, "Cart Service", "Go", "Корзина; «Заказать снова» — перенос позиций заказа в корзину")
+
+    Container(history, "Order History Service", "Go", "Query-сторона CQRS: проекции событий в денормализованную историю заказов; API списка и деталей заказа", $tags="new")
+    ContainerDb(history_db, "Order History Read DB", "MongoDB (шардирование по customerId)", "Документ на заказ: позиции с ценами и фото, суммы, доставка, оплата, статус, чек, отзывы", $tags="new")
+    ContainerDb(history_cache, "History Cache", "Redis", "Первая страница истории и горячие детали заказов", $tags="new")
+    ContainerDb(receipts, "Хранилище чеков", "S3-совместимое Object Storage", "PDF чеков, выдаются по pre-signed URL", $tags="new")
+
+    ContainerQueue(t_order, "order.events", "Kafka topic", "OrderCreated, OrderConfirmed, OrderCancelled, OrderStatusChanged")
+    ContainerQueue(t_payment, "payment.events", "Kafka topic", "PaymentSucceeded, RefundSucceeded, ReceiptIssued")
+    ContainerQueue(t_delivery, "delivery.events", "Kafka topic", "DeliveryCreated, DeliveryStatusChanged")
+    ContainerQueue(t_review, "review.events", "Kafka topic", "ReviewPublished")
+}
+
+Rel(customer, mobile, "Использует")
+Rel(mobile, gateway, "REST", "HTTPS")
+
+Rel(gateway, history, "GET /me/orders?cursor=…\nGET /me/orders/{id}\nGET /me/orders/{id}/receipt", "REST", $tags="new")
+Rel(gateway, review, "POST /reviews", "REST")
+Rel(gateway, cart, "POST /cart/reorder {orderId}", "REST")
+
+Rel(history, history_cache, "Чтение / запись", $tags="new")
+Rel(history, history_db, "Чтение / upsert проекций", $tags="new")
+Rel(history, receipts, "Pre-signed URL на чек", $tags="new")
+
+Rel(cart, history, "Позиции заказа для повтора", "gRPC", $tags="new")
+Rel(cart, catalog, "Актуальные цены и наличие", "gRPC")
+Rel(review, history, "Проверка «товар куплен и доставлен»", "gRPC", $tags="new")
+
+Rel(order, order_db, "Чтение / запись")
+Rel(payment, payment_db, "Чтение / запись")
+Rel(payment, payment_gw, "Платежи и возвраты", "HTTPS")
+Rel(payment, ofd, "Фискализация", "HTTPS")
+Rel(payment, receipts, "Сохраняет PDF чека")
+Rel(delivery, logistics, "Заявки и статусы", "HTTPS")
+
+Rel(order, t_order, "Публикует")
+Rel(payment, t_payment, "Публикует")
+Rel(delivery, t_delivery, "Публикует")
+Rel(review, t_review, "Публикует")
+
+Rel(t_order, history, "OrderCreated, OrderConfirmed, OrderCancelled, OrderStatusChanged", $tags="new")
+Rel(t_payment, history, "PaymentSucceeded, RefundSucceeded, ReceiptIssued", $tags="new")
+Rel(t_delivery, history, "DeliveryCreated, DeliveryStatusChanged", $tags="new")
+Rel(t_review, history, "ReviewPublished → отметка «отзыв оставлен»", $tags="new")
+
+SHOW_LEGEND()
+@enduml
