@@ -1,0 +1,85 @@
+@startuml
+title Saga-хореография «Оформление заказа» — успешный сценарий
+
+autonumber
+skinparam sequenceMessageAlign center
+skinparam responseMessageBelowArrow true
+
+actor "Покупатель" as C
+participant "Мобильное\nприложение" as App
+participant "API Gateway\n(NGINX)" as GW
+participant "Order\nService" as OS
+queue "Kafka" as K
+participant "Inventory\nService" as IS
+participant "Payment\nService" as PS
+participant "Платёжный\nшлюз" as PG
+participant "Delivery\nService" as DS
+participant "Логистический\nпровайдер" as LP
+participant "Notification\nService" as NS
+participant "Seller\nService" as SS
+actor "Продавец" as Sel
+
+== Шаг 1. Подтверждение состава заказа ==
+C -> App : Проверяет корзину, адрес,\nспособ доставки и оплаты
+App -> GW : POST /orders (Idempotency-Key)
+GW -> OS : POST /orders
+OS -> OS : Проверка цен (gRPC в Catalog),\nзаказ CREATED + outbox в одной транзакции
+OS --> App : 202 Accepted {orderId, status: CREATED}
+OS -> K : **OrderCreated** {orderId, customerId, items, delivery, paymentMethod}
+
+== Шаг 2. Проверка и резервирование ==
+K -> IS : OrderCreated
+IS -> IS : Проверка остатков, резерв с TTL
+IS -> K : **StockReserved** {orderId, reservationId, expiresAt}
+K -> OS : StockReserved
+OS -> OS : Статус «Ожидает оплаты»
+
+== Шаг 3. Оплата ==
+K -> PS : StockReserved
+alt Привязанная карта (автосписание)
+    PS -> PG : Списание по токену карты
+    PG --> PS : Успех
+else Новая карта / другой способ
+    PS -> PG : Создать платёжную сессию
+    PG --> PS : paymentUrl
+    PS -> K : **PaymentInitiated** {orderId, paymentId, paymentUrl}
+    K -> OS : PaymentInitiated
+    App -> GW : GET /orders/{id} (или push)
+    GW -> OS : GET /orders/{id}
+    OS --> App : status: AWAITING_PAYMENT, paymentUrl
+    App -> PG : Редирект на платёжную страницу
+    C -> PG : Вводит данные карты\n(опционально «привязать карту»)
+    PG -> GW : Webhook: payment succeeded
+    GW -> PS : Webhook
+end
+PS -> K : **PaymentSucceeded** {orderId, paymentId, amount, cardToken?}
+
+K -> OS : PaymentSucceeded
+OS -> OS : Статус «Оплачен и готовится к отправке»
+K -> IS : PaymentSucceeded
+IS -> IS : Резерв закреплён за заказом (TTL снят)
+IS -> K : **StockCommitted** {orderId}
+
+== Шаг 4. Подготовка к доставке ==
+K -> DS : PaymentSucceeded
+DS -> LP : Создать заявку (адрес, получатель, товары)\nчерез egress NGINX: таймаут, retry, circuit breaker
+LP --> DS : trackNumber, estimatedDate
+DS -> K : **DeliveryCreated** {orderId, trackNumber, estimatedDeliveryDate}
+K -> OS : DeliveryCreated
+OS -> OS : Сохранить трек-номер,\nсага завершена
+OS -> K : **OrderConfirmed** {orderId, sellerIds, items}
+K -> NS : OrderConfirmed
+NS -> C : Push «Заказ оплачен, готовится к отправке»
+NS -> Sel : Push / email «Новый заказ: подготовьте товар к отправке»
+K -> SS : OrderConfirmed
+SS -> SS : Заказ появился в кабинете продавца
+
+== Дальше — отслеживание статуса (вне саги) ==
+LP -> GW : Webhook: передан в доставку / доставлен
+GW -> DS : Webhook
+DS -> K : **DeliveryStatusChanged** {orderId, status: HANDED_TO_CARRIER | DELIVERED}
+K -> OS : DeliveryStatusChanged
+OS -> K : **OrderStatusChanged** {orderId, status}
+K -> NS : OrderStatusChanged
+K -> SS : OrderStatusChanged
+@enduml

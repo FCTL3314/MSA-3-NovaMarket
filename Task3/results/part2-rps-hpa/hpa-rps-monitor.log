@@ -1,0 +1,405 @@
+===== 2026-10-28 11:50:57 =====
+scaletestapp-rps   Deployment/scaletestapp   0/10   1     10    1     59s
+scaletestapp   1/1   1     1     15m
+  rps scaletestapp-59796c6f85-9bgqx 0
+===== 2026-10-28 11:51:12 =====
+scaletestapp-rps   Deployment/scaletestapp   0/10   1     10    1     74s
+scaletestapp   1/1   1     1     15m
+  rps scaletestapp-59796c6f85-9bgqx 3640m
+===== 2026-10-28 11:51:27 =====
+scaletestapp-rps   Deployment/scaletestapp   3640m/10   1     10    1     89s
+scaletestapp   1/1   1     1     15m
+  rps scaletestapp-59796c6f85-9bgqx 12600m
+===== 2026-10-28 11:51:42 =====
+scaletestapp-rps   Deployment/scaletestapp   12600m/10   1     10    1     104s
+scaletestapp   2/2   2     2     16m
+  rps scaletestapp-59796c6f85-9bgqx 21440m
+  rps scaletestapp-59796c6f85-f7hf5 453m
+===== 2026-10-28 11:51:57 =====
+scaletestapp-rps   Deployment/scaletestapp   10966m/10   1     10    2     119s
+scaletestapp   2/2   2     2     16m
+  rps scaletestapp-59796c6f85-9bgqx 27838m
+  rps scaletestapp-59796c6f85-f7hf5 2948m
+===== 2026-10-28 11:52:13 =====
+scaletestapp-rps   Deployment/scaletestapp   15426m/10   1     10    2     2m15s
+scaletestapp   4/4   4     4     16m
+  rps scaletestapp-59796c6f85-9bgqx 32400m
+  rps scaletestapp-59796c6f85-9d6ds 350m
+  rps scaletestapp-59796c6f85-f7hf5 7479m
+  rps scaletestapp-59796c6f85-vwgw4 651m
+===== 2026-10-28 11:52:28 =====
+scaletestapp-rps   Deployment/scaletestapp   10229m/10   1     10    4     2m30s
+scaletestapp   4/4   4     4     16m
+  rps scaletestapp-59796c6f85-9bgqx 36285m
+  rps scaletestapp-59796c6f85-9d6ds 2369m
+  rps scaletestapp-59796c6f85-f7hf5 10239m
+  rps scaletestapp-59796c6f85-vwgw4 3293m
+===== 2026-10-28 11:52:43 =====
+scaletestapp-rps   Deployment/scaletestapp   13055m/10   1     10    4     2m45s
+scaletestapp   6/6   6     6     17m
+  rps scaletestapp-59796c6f85-78lvf 164m
+  rps scaletestapp-59796c6f85-9bgqx 39763m
+  rps scaletestapp-59796c6f85-9d6ds 5199m
+  rps scaletestapp-59796c6f85-f7hf5 11798m
+  rps scaletestapp-59796c6f85-vd6n4 197m
+  rps scaletestapp-59796c6f85-vwgw4 6400m
+===== 2026-10-28 11:52:58 =====
+scaletestapp-rps   Deployment/scaletestapp   10587m/10   1     10    6     3m
+scaletestapp   6/6   6     6     17m
+  rps scaletestapp-59796c6f85-78lvf 1
+  rps scaletestapp-59796c6f85-9bgqx 41158m
+  rps scaletestapp-59796c6f85-9d6ds 6479m
+  rps scaletestapp-59796c6f85-f7hf5 14960m
+  rps scaletestapp-59796c6f85-vd6n4 1484m
+  rps scaletestapp-59796c6f85-vwgw4 8800m
+===== 2026-10-28 11:53:14 =====
+scaletestapp-rps   Deployment/scaletestapp   10540m/10   1     10    8     3m16s
+scaletestapp   8/8   8     8     17m
+  rps scaletestapp-59796c6f85-78lvf 3040m
+  rps scaletestapp-59796c6f85-9bgqx 42123m
+  rps scaletestapp-59796c6f85-9d6ds 9280m
+  rps scaletestapp-59796c6f85-f7hf5 16398m
+  rps scaletestapp-59796c6f85-qqzvx 140m
+  rps scaletestapp-59796c6f85-v28b2 274m
+  rps scaletestapp-59796c6f85-vd6n4 2960m
+  rps scaletestapp-59796c6f85-vwgw4 10160m
+===== 2026-10-28 11:53:30 =====
+scaletestapp-rps   Deployment/scaletestapp   11635m/10   1     10    8     3m32s
+scaletestapp   8/10   10    8     17m
+  rps scaletestapp-59796c6f85-78lvf 5080m
+  rps scaletestapp-59796c6f85-9bgqx 42720m
+  rps scaletestapp-59796c6f85-9d6ds 10920m
+  rps scaletestapp-59796c6f85-f7hf5 17080m
+  rps scaletestapp-59796c6f85-qqzvx 843m
+  rps scaletestapp-59796c6f85-v28b2 1252m
+  rps scaletestapp-59796c6f85-vd6n4 4160m
+  rps scaletestapp-59796c6f85-vwgw4 11360m
+===== 2026-10-28 11:53:46 =====
+scaletestapp-rps   Deployment/scaletestapp   9743m/10   1     10    10    3m48s
+scaletestapp   10/10   10    10    18m
+  rps scaletestapp-59796c6f85-78lvf 6160m
+  rps scaletestapp-59796c6f85-9bgqx 43078m
+  rps scaletestapp-59796c6f85-9d6ds 11720m
+  rps scaletestapp-59796c6f85-f7hf5 16400m
+  rps scaletestapp-59796c6f85-h6m6t 0
+  rps scaletestapp-59796c6f85-qqzvx 1720m
+  rps scaletestapp-59796c6f85-v28b2 2120m
+  rps scaletestapp-59796c6f85-vd6n4 4679m
+  rps scaletestapp-59796c6f85-vwgw4 11920m
+  rps scaletestapp-59796c6f85-wsmqf 0
+===== 2026-10-28 11:54:01 =====
+scaletestapp-rps   Deployment/scaletestapp   9875m/10   1     10    10    4m3s
+scaletestapp   10/10   10    10    18m
+  rps scaletestapp-59796c6f85-78lvf 5841m
+  rps scaletestapp-59796c6f85-9bgqx 44158m
+  rps scaletestapp-59796c6f85-9d6ds 11920m
+  rps scaletestapp-59796c6f85-f7hf5 16720m
+  rps scaletestapp-59796c6f85-h6m6t 0
+  rps scaletestapp-59796c6f85-qqzvx 1920m
+  rps scaletestapp-59796c6f85-v28b2 2520m
+  rps scaletestapp-59796c6f85-vd6n4 4400m
+  rps scaletestapp-59796c6f85-vwgw4 12
+  rps scaletestapp-59796c6f85-wsmqf 0
+===== 2026-10-28 11:54:16 =====
+scaletestapp-rps   Deployment/scaletestapp   9963m/10   1     10    10    4m18s
+scaletestapp   10/10   10    10    18m
+  rps scaletestapp-59796c6f85-78lvf 5840m
+  rps scaletestapp-59796c6f85-9bgqx 44234m
+  rps scaletestapp-59796c6f85-9d6ds 11880m
+  rps scaletestapp-59796c6f85-f7hf5 16640m
+  rps scaletestapp-59796c6f85-h6m6t 0
+  rps scaletestapp-59796c6f85-qqzvx 1680m
+  rps scaletestapp-59796c6f85-v28b2 2480m
+  rps scaletestapp-59796c6f85-vd6n4 4800m
+  rps scaletestapp-59796c6f85-vwgw4 11719m
+  rps scaletestapp-59796c6f85-wsmqf 0
+===== 2026-10-28 11:54:31 =====
+scaletestapp-rps   Deployment/scaletestapp   9875m/10   1     10    10    4m33s
+scaletestapp   10/10   10    10    18m
+  rps scaletestapp-59796c6f85-78lvf 6
+  rps scaletestapp-59796c6f85-9bgqx 43878m
+  rps scaletestapp-59796c6f85-9d6ds 11559m
+  rps scaletestapp-59796c6f85-f7hf5 16718m
+  rps scaletestapp-59796c6f85-h6m6t 0
+  rps scaletestapp-59796c6f85-qqzvx 1800m
+  rps scaletestapp-59796c6f85-v28b2 2280m
+  rps scaletestapp-59796c6f85-vd6n4 4679m
+  rps scaletestapp-59796c6f85-vwgw4 11880m
+  rps scaletestapp-59796c6f85-wsmqf 0
+===== 2026-10-28 11:54:46 =====
+scaletestapp-rps   Deployment/scaletestapp   10048m/10   1     10    10    4m48s
+scaletestapp   10/10   10    10    19m
+  rps scaletestapp-59796c6f85-78lvf 6041m
+  rps scaletestapp-59796c6f85-9bgqx 44168m
+  rps scaletestapp-59796c6f85-9d6ds 12120m
+  rps scaletestapp-59796c6f85-f7hf5 17280m
+  rps scaletestapp-59796c6f85-h6m6t 0
+  rps scaletestapp-59796c6f85-qqzvx 1919m
+  rps scaletestapp-59796c6f85-v28b2 2280m
+  rps scaletestapp-59796c6f85-vd6n4 4640m
+  rps scaletestapp-59796c6f85-vwgw4 12443m
+  rps scaletestapp-59796c6f85-wsmqf 0
+===== 2026-10-28 11:55:02 =====
+scaletestapp-rps   Deployment/scaletestapp   10213m/10   1     10    10    5m4s
+scaletestapp   10/10   10    10    19m
+  rps scaletestapp-59796c6f85-78lvf 5842m
+  rps scaletestapp-59796c6f85-9bgqx 44648m
+  rps scaletestapp-59796c6f85-9d6ds 12120m
+  rps scaletestapp-59796c6f85-f7hf5 17403m
+  rps scaletestapp-59796c6f85-h6m6t 0
+  rps scaletestapp-59796c6f85-qqzvx 2200m
+  rps scaletestapp-59796c6f85-v28b2 2280m
+  rps scaletestapp-59796c6f85-vd6n4 4761m
+  rps scaletestapp-59796c6f85-vwgw4 12322m
+  rps scaletestapp-59796c6f85-wsmqf 0
+===== 2026-10-28 11:55:17 =====
+scaletestapp-rps   Deployment/scaletestapp   10023m/10   1     10    10    5m19s
+scaletestapp   10/10   10    10    19m
+  rps scaletestapp-59796c6f85-78lvf 5838m
+  rps scaletestapp-59796c6f85-9bgqx 42633m
+  rps scaletestapp-59796c6f85-9d6ds 12036m
+  rps scaletestapp-59796c6f85-f7hf5 17279m
+  rps scaletestapp-59796c6f85-h6m6t 0
+  rps scaletestapp-59796c6f85-qqzvx 2
+  rps scaletestapp-59796c6f85-v28b2 2199m
+  rps scaletestapp-59796c6f85-vd6n4 4800m
+  rps scaletestapp-59796c6f85-vwgw4 12717m
+  rps scaletestapp-59796c6f85-wsmqf 0
+===== 2026-10-28 11:55:32 =====
+scaletestapp-rps   Deployment/scaletestapp   10141m/10   1     10    10    5m34s
+scaletestapp   10/10   10    10    19m
+  rps scaletestapp-59796c6f85-78lvf 5958m
+  rps scaletestapp-59796c6f85-9bgqx 44112m
+  rps scaletestapp-59796c6f85-9d6ds 12038m
+  rps scaletestapp-59796c6f85-f7hf5 17796m
+  rps scaletestapp-59796c6f85-h6m6t 0
+  rps scaletestapp-59796c6f85-qqzvx 1959m
+  rps scaletestapp-59796c6f85-v28b2 2439m
+  rps scaletestapp-59796c6f85-vd6n4 4998m
+  rps scaletestapp-59796c6f85-vwgw4 11837m
+  rps scaletestapp-59796c6f85-wsmqf 0
+===== 2026-10-28 11:55:47 =====
+scaletestapp-rps   Deployment/scaletestapp   10187m/10   1     10    10    5m49s
+scaletestapp   10/10   10    10    20m
+  rps scaletestapp-59796c6f85-78lvf 6200m
+  rps scaletestapp-59796c6f85-9bgqx 44958m
+  rps scaletestapp-59796c6f85-9d6ds 12076m
+  rps scaletestapp-59796c6f85-f7hf5 17440m
+  rps scaletestapp-59796c6f85-h6m6t 0
+  rps scaletestapp-59796c6f85-qqzvx 2080m
+  rps scaletestapp-59796c6f85-v28b2 2560m
+  rps scaletestapp-59796c6f85-vd6n4 4800m
+  rps scaletestapp-59796c6f85-vwgw4 12120m
+  rps scaletestapp-59796c6f85-wsmqf 0
+===== 2026-10-28 11:56:02 =====
+scaletestapp-rps   Deployment/scaletestapp   10247m/10   1     10    10    6m4s
+scaletestapp   10/10   10    10    20m
+  rps scaletestapp-59796c6f85-78lvf 6319m
+  rps scaletestapp-59796c6f85-9bgqx 43360m
+  rps scaletestapp-59796c6f85-9d6ds 12320m
+  rps scaletestapp-59796c6f85-f7hf5 17839m
+  rps scaletestapp-59796c6f85-h6m6t 0
+  rps scaletestapp-59796c6f85-qqzvx 1840m
+  rps scaletestapp-59796c6f85-v28b2 2280m
+  rps scaletestapp-59796c6f85-vd6n4 4880m
+  rps scaletestapp-59796c6f85-vwgw4 12600m
+  rps scaletestapp-59796c6f85-wsmqf 0
+===== 2026-10-28 11:56:18 =====
+scaletestapp-rps   Deployment/scaletestapp   10004m/10   1     10    10    6m20s
+scaletestapp   10/10   10    10    20m
+  rps scaletestapp-59796c6f85-78lvf 6200m
+  rps scaletestapp-59796c6f85-9bgqx 42758m
+  rps scaletestapp-59796c6f85-9d6ds 12279m
+  rps scaletestapp-59796c6f85-f7hf5 17437m
+  rps scaletestapp-59796c6f85-h6m6t 0
+  rps scaletestapp-59796c6f85-qqzvx 1760m
+  rps scaletestapp-59796c6f85-v28b2 2279m
+  rps scaletestapp-59796c6f85-vd6n4 4840m
+  rps scaletestapp-59796c6f85-vwgw4 12320m
+  rps scaletestapp-59796c6f85-wsmqf 0
+===== 2026-10-28 11:56:33 =====
+scaletestapp-rps   Deployment/scaletestapp   10019m/10   1     10    10    6m35s
+scaletestapp   10/10   10    10    20m
+  rps scaletestapp-59796c6f85-78lvf 6
+  rps scaletestapp-59796c6f85-9bgqx 43123m
+  rps scaletestapp-59796c6f85-9d6ds 11997m
+  rps scaletestapp-59796c6f85-f7hf5 17440m
+  rps scaletestapp-59796c6f85-h6m6t 0
+  rps scaletestapp-59796c6f85-qqzvx 1720m
+  rps scaletestapp-59796c6f85-v28b2 2320m
+  rps scaletestapp-59796c6f85-vd6n4 4559m
+  rps scaletestapp-59796c6f85-vwgw4 12560m
+  rps scaletestapp-59796c6f85-wsmqf 0
+===== 2026-10-28 11:56:49 =====
+scaletestapp-rps   Deployment/scaletestapp   9941m/10   1     10    10    6m51s
+scaletestapp   10/10   10    10    21m
+  rps scaletestapp-59796c6f85-78lvf 5679m
+  rps scaletestapp-59796c6f85-9bgqx 42956m
+  rps scaletestapp-59796c6f85-9d6ds 11960m
+  rps scaletestapp-59796c6f85-f7hf5 17120m
+  rps scaletestapp-59796c6f85-h6m6t 0
+  rps scaletestapp-59796c6f85-qqzvx 1959m
+  rps scaletestapp-59796c6f85-v28b2 2360m
+  rps scaletestapp-59796c6f85-vd6n4 4480m
+  rps scaletestapp-59796c6f85-vwgw4 12720m
+  rps scaletestapp-59796c6f85-wsmqf 0
+===== 2026-10-28 11:57:04 =====
+scaletestapp-rps   Deployment/scaletestapp   9667m/10   1     10    10    7m6s
+scaletestapp   10/10   10    10    21m
+  rps scaletestapp-59796c6f85-78lvf 4720m
+  rps scaletestapp-59796c6f85-9bgqx 34917m
+  rps scaletestapp-59796c6f85-9d6ds 9720m
+  rps scaletestapp-59796c6f85-f7hf5 12481m
+  rps scaletestapp-59796c6f85-h6m6t 0
+  rps scaletestapp-59796c6f85-qqzvx 1600m
+  rps scaletestapp-59796c6f85-v28b2 1839m
+  rps scaletestapp-59796c6f85-vd6n4 3400m
+  rps scaletestapp-59796c6f85-vwgw4 10959m
+  rps scaletestapp-59796c6f85-wsmqf 0
+===== 2026-10-28 11:57:19 =====
+scaletestapp-rps   Deployment/scaletestapp   3951m/10   1     10    10    7m21s
+scaletestapp   10/10   10    10    21m
+  rps scaletestapp-59796c6f85-78lvf 1279m
+  rps scaletestapp-59796c6f85-9bgqx 9760m
+  rps scaletestapp-59796c6f85-9d6ds 2440m
+  rps scaletestapp-59796c6f85-f7hf5 2119m
+  rps scaletestapp-59796c6f85-h6m6t 0
+  rps scaletestapp-59796c6f85-qqzvx 319m
+  rps scaletestapp-59796c6f85-v28b2 440m
+  rps scaletestapp-59796c6f85-vd6n4 560m
+  rps scaletestapp-59796c6f85-vwgw4 3160m
+  rps scaletestapp-59796c6f85-wsmqf 0
+===== 2026-10-28 11:57:34 =====
+scaletestapp-rps   Deployment/scaletestapp   0/10   1     10    10    7m36s
+scaletestapp   10/10   10    10    21m
+  rps scaletestapp-59796c6f85-78lvf 0
+  rps scaletestapp-59796c6f85-9bgqx 0
+  rps scaletestapp-59796c6f85-9d6ds 0
+  rps scaletestapp-59796c6f85-f7hf5 0
+  rps scaletestapp-59796c6f85-h6m6t 0
+  rps scaletestapp-59796c6f85-qqzvx 0
+  rps scaletestapp-59796c6f85-v28b2 0
+  rps scaletestapp-59796c6f85-vd6n4 0
+  rps scaletestapp-59796c6f85-vwgw4 0
+  rps scaletestapp-59796c6f85-wsmqf 0
+===== 2026-10-28 11:57:50 =====
+scaletestapp-rps   Deployment/scaletestapp   0/10   1     10    10    7m52s
+scaletestapp   10/10   10    10    22m
+  rps scaletestapp-59796c6f85-78lvf 0
+  rps scaletestapp-59796c6f85-9bgqx 0
+  rps scaletestapp-59796c6f85-9d6ds 0
+  rps scaletestapp-59796c6f85-f7hf5 0
+  rps scaletestapp-59796c6f85-h6m6t 0
+  rps scaletestapp-59796c6f85-qqzvx 0
+  rps scaletestapp-59796c6f85-v28b2 0
+  rps scaletestapp-59796c6f85-vd6n4 0
+  rps scaletestapp-59796c6f85-vwgw4 0
+  rps scaletestapp-59796c6f85-wsmqf 0
+===== 2026-10-28 11:58:05 =====
+scaletestapp-rps   Deployment/scaletestapp   0/10   1     10    10    8m7s
+scaletestapp   8/8   8     8     22m
+  rps scaletestapp-59796c6f85-78lvf 0
+  rps scaletestapp-59796c6f85-9bgqx 0
+  rps scaletestapp-59796c6f85-9d6ds 0
+  rps scaletestapp-59796c6f85-f7hf5 0
+  rps scaletestapp-59796c6f85-qqzvx 0
+  rps scaletestapp-59796c6f85-v28b2 0
+  rps scaletestapp-59796c6f85-vd6n4 0
+  rps scaletestapp-59796c6f85-vwgw4 0
+===== 2026-10-28 11:58:21 =====
+scaletestapp-rps   Deployment/scaletestapp   0/10   1     10    8     8m23s
+scaletestapp   8/8   8     8     22m
+  rps scaletestapp-59796c6f85-78lvf 0
+  rps scaletestapp-59796c6f85-9bgqx 0
+  rps scaletestapp-59796c6f85-9d6ds 0
+  rps scaletestapp-59796c6f85-f7hf5 0
+  rps scaletestapp-59796c6f85-qqzvx 0
+  rps scaletestapp-59796c6f85-v28b2 0
+  rps scaletestapp-59796c6f85-vd6n4 0
+  rps scaletestapp-59796c6f85-vwgw4 0
+===== 2026-10-28 11:58:36 =====
+scaletestapp-rps   Deployment/scaletestapp   0/10   1     10    8     8m38s
+scaletestapp   6/6   6     6     22m
+  rps scaletestapp-59796c6f85-9d6ds 0
+  rps scaletestapp-59796c6f85-f7hf5 0
+  rps scaletestapp-59796c6f85-qqzvx 0
+  rps scaletestapp-59796c6f85-v28b2 0
+  rps scaletestapp-59796c6f85-vd6n4 0
+  rps scaletestapp-59796c6f85-vwgw4 0
+===== 2026-10-28 11:58:51 =====
+scaletestapp-rps   Deployment/scaletestapp   0/10   1     10    6     8m53s
+scaletestapp   6/6   6     6     23m
+  rps scaletestapp-59796c6f85-9d6ds 0
+  rps scaletestapp-59796c6f85-f7hf5 0
+  rps scaletestapp-59796c6f85-qqzvx 0
+  rps scaletestapp-59796c6f85-v28b2 0
+  rps scaletestapp-59796c6f85-vd6n4 0
+  rps scaletestapp-59796c6f85-vwgw4 0
+===== 2026-10-28 11:59:06 =====
+scaletestapp-rps   Deployment/scaletestapp   0/10   1     10    6     9m8s
+scaletestapp   4/4   4     4     23m
+  rps scaletestapp-59796c6f85-9d6ds 0
+  rps scaletestapp-59796c6f85-qqzvx 0
+  rps scaletestapp-59796c6f85-vd6n4 0
+  rps scaletestapp-59796c6f85-vwgw4 0
+===== 2026-10-28 11:59:21 =====
+scaletestapp-rps   Deployment/scaletestapp   0/10   1     10    4     9m23s
+scaletestapp   4/4   4     4     23m
+  rps scaletestapp-59796c6f85-9d6ds 0
+  rps scaletestapp-59796c6f85-qqzvx 0
+  rps scaletestapp-59796c6f85-vd6n4 0
+  rps scaletestapp-59796c6f85-vwgw4 0
+===== 2026-10-28 11:59:36 =====
+scaletestapp-rps   Deployment/scaletestapp   0/10   1     10    4     9m38s
+scaletestapp   2/2   2     2     23m
+  rps scaletestapp-59796c6f85-9d6ds 0
+  rps scaletestapp-59796c6f85-qqzvx 0
+===== 2026-10-28 11:59:52 =====
+scaletestapp-rps   Deployment/scaletestapp   0/10   1     10    2     9m54s
+scaletestapp   2/2   2     2     24m
+  rps scaletestapp-59796c6f85-9d6ds 0
+  rps scaletestapp-59796c6f85-qqzvx 0
+===== 2026-10-28 12:00:07 =====
+scaletestapp-rps   Deployment/scaletestapp   0/10   1     10    2     10m
+scaletestapp   1/1   1     1     24m
+  rps scaletestapp-59796c6f85-9d6ds 0
+===== 2026-10-28 12:00:22 =====
+scaletestapp-rps   Deployment/scaletestapp   0/10   1     10    1     10m
+scaletestapp   1/1   1     1     24m
+  rps scaletestapp-59796c6f85-9d6ds 0
+===== 2026-10-28 12:00:37 =====
+scaletestapp-rps   Deployment/scaletestapp   0/10   1     10    1     10m
+scaletestapp   1/1   1     1     24m
+  rps scaletestapp-59796c6f85-9d6ds 0
+===== 2026-10-28 12:00:53 =====
+scaletestapp-rps   Deployment/scaletestapp   0/10   1     10    1     10m
+scaletestapp   1/1   1     1     25m
+  rps scaletestapp-59796c6f85-9d6ds 0
+===== 2026-10-28 12:01:08 =====
+scaletestapp-rps   Deployment/scaletestapp   0/10   1     10    1     11m
+scaletestapp   1/1   1     1     25m
+  rps scaletestapp-59796c6f85-9d6ds 0
+===== 2026-10-28 12:01:23 =====
+scaletestapp-rps   Deployment/scaletestapp   0/10   1     10    1     11m
+scaletestapp   1/1   1     1     25m
+  rps scaletestapp-59796c6f85-9d6ds 0
+===== 2026-10-28 12:01:38 =====
+scaletestapp-rps   Deployment/scaletestapp   0/10   1     10    1     11m
+scaletestapp   1/1   1     1     26m
+  rps scaletestapp-59796c6f85-9d6ds 0
+===== 2026-10-28 12:01:54 =====
+scaletestapp-rps   Deployment/scaletestapp   0/10   1     10    1     11m
+scaletestapp   1/1   1     1     26m
+  rps scaletestapp-59796c6f85-9d6ds 0
+===== 2026-10-28 12:02:09 =====
+scaletestapp-rps   Deployment/scaletestapp   0/10   1     10    1     12m
+scaletestapp   1/1   1     1     26m
+  rps scaletestapp-59796c6f85-9d6ds 0
+===== 2026-10-28 12:02:24 =====
+scaletestapp-rps   Deployment/scaletestapp   0/10   1     10    1     12m
+scaletestapp   1/1   1     1     26m
+  rps scaletestapp-59796c6f85-9d6ds 0
+===== 2026-10-28 12:02:39 =====
+scaletestapp-rps   Deployment/scaletestapp   0/10   1     10    1     12m
+scaletestapp   1/1   1     1     27m
+  rps scaletestapp-59796c6f85-9d6ds 0

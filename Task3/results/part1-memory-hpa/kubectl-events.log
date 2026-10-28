@@ -1,0 +1,40 @@
+TIME                   KIND                      NAME                      REASON                           MESSAGE
+<nil>                  Node                      novamarket-k3s            Starting                         <none>
+2026-10-28T08:34:36Z   Node                      novamarket-k3s            CertificateExpirationOK          Node and Certificate Authority certificates managed by k3s are OK
+2026-10-28T08:34:36Z   Node                      novamarket-k3s            Starting                         Starting kubelet.
+2026-10-28T08:34:36Z   Node                      novamarket-k3s            InvalidDiskCapacity              invalid capacity 0 on image filesystem
+2026-10-28T08:34:36Z   Node                      novamarket-k3s            NodeHasSufficientMemory          Node novamarket-k3s status is now: NodeHasSufficientMemory
+2026-10-28T08:34:36Z   Node                      novamarket-k3s            NodeHasNoDiskPressure            Node novamarket-k3s status is now: NodeHasNoDiskPressure
+2026-10-28T08:34:36Z   Node                      novamarket-k3s            NodeHasSufficientPID             Node novamarket-k3s status is now: NodeHasSufficientPID
+2026-10-28T08:34:36Z   Node                      novamarket-k3s            NodeAllocatableEnforced          Updated Node Allocatable limit across pods
+2026-10-28T08:34:37Z   Node                      novamarket-k3s            NodeReady                        Node novamarket-k3s status is now: NodeReady
+2026-10-28T08:34:41Z   Node                      novamarket-k3s            Synced                           Node synced successfully
+2026-10-28T08:34:41Z   Node                      novamarket-k3s            RegisteredNode                   Node novamarket-k3s event: Registered Node novamarket-k3s in Controller
+2026-10-28T08:34:42Z   Node                      novamarket-k3s            NodePasswordValidationComplete   Deferred node password secret validation complete
+2026-10-28T08:35:38Z   Deployment                scaletestapp              ScalingReplicaSet                Scaled up replica set scaletestapp-84bfddc47b from 0 to 1
+2026-10-28T08:35:38Z   ReplicaSet                scaletestapp-84bfddc47b   SuccessfulCreate                 Created pod: scaletestapp-84bfddc47b-l96s6
+2026-10-28T08:39:42Z   Deployment                scaletestapp              ScalingReplicaSet                Scaled up replica set scaletestapp-5f9b6b6ff from 0 to 1
+2026-10-28T08:39:43Z   ReplicaSet                scaletestapp-5f9b6b6ff    SuccessfulCreate                 Created pod: scaletestapp-5f9b6b6ff-h22kv
+2026-10-28T08:39:49Z   Deployment                scaletestapp              ScalingReplicaSet                Scaled down replica set scaletestapp-84bfddc47b from 1 to 0
+2026-10-28T08:39:49Z   ReplicaSet                scaletestapp-84bfddc47b   SuccessfulDelete                 Deleted pod: scaletestapp-84bfddc47b-l96s6
+2026-10-28T08:42:50Z   Deployment                scaletestapp              ScalingReplicaSet                Scaled up replica set scaletestapp-5f9b6b6ff from 1 to 2
+2026-10-28T08:42:50Z   HorizontalPodAutoscaler   scaletestapp-memory       SuccessfulRescale                New size: 2; reason: memory resource utilization (percentage of request) above target
+2026-10-28T08:42:51Z   ReplicaSet                scaletestapp-5f9b6b6ff    SuccessfulCreate                 Created pod: scaletestapp-5f9b6b6ff-rwn6f
+2026-10-28T08:43:20Z   ReplicaSet                scaletestapp-5f9b6b6ff    SuccessfulCreate                 Created pod: scaletestapp-5f9b6b6ff-rs9nd
+2026-10-28T08:43:20Z   Deployment                scaletestapp              ScalingReplicaSet                Scaled up replica set scaletestapp-5f9b6b6ff from 2 to 3
+2026-10-28T08:43:20Z   HorizontalPodAutoscaler   scaletestapp-memory       SuccessfulRescale                New size: 3; reason: memory resource utilization (percentage of request) above target
+2026-10-28T08:44:20Z   HorizontalPodAutoscaler   scaletestapp-memory       SuccessfulRescale                New size: 4; reason: memory resource utilization (percentage of request) above target
+2026-10-28T08:44:20Z   Deployment                scaletestapp              ScalingReplicaSet                Scaled up replica set scaletestapp-5f9b6b6ff from 3 to 4
+2026-10-28T08:44:21Z   ReplicaSet                scaletestapp-5f9b6b6ff    SuccessfulCreate                 Created pod: scaletestapp-5f9b6b6ff-x2d2t
+2026-10-28T08:45:20Z   HorizontalPodAutoscaler   scaletestapp-memory       SuccessfulRescale                New size: 5; reason: memory resource utilization (percentage of request) above target
+2026-10-28T08:45:20Z   Deployment                scaletestapp              ScalingReplicaSet                Scaled up replica set scaletestapp-5f9b6b6ff from 4 to 5
+2026-10-28T08:45:21Z   ReplicaSet                scaletestapp-5f9b6b6ff    SuccessfulCreate                 Created pod: scaletestapp-5f9b6b6ff-xc8pz
+2026-10-28T08:46:05Z   HorizontalPodAutoscaler   scaletestapp-memory       SuccessfulRescale                New size: 6; reason: memory resource utilization (percentage of request) above target
+2026-10-28T08:46:05Z   Deployment                scaletestapp              ScalingReplicaSet                Scaled up replica set scaletestapp-5f9b6b6ff from 5 to 6
+2026-10-28T08:46:06Z   ReplicaSet                scaletestapp-5f9b6b6ff    SuccessfulCreate                 Created pod: scaletestapp-5f9b6b6ff-hbz92
+2026-10-28T08:47:50Z   HorizontalPodAutoscaler   scaletestapp-memory       SuccessfulRescale                New size: 7; reason: memory resource utilization (percentage of request) above target
+2026-10-28T08:47:50Z   Deployment                scaletestapp              ScalingReplicaSet                Scaled up replica set scaletestapp-5f9b6b6ff from 6 to 7
+2026-10-28T08:47:51Z   ReplicaSet                scaletestapp-5f9b6b6ff    SuccessfulCreate                 Created pod: scaletestapp-5f9b6b6ff-g8ng6
+2026-10-28T08:49:05Z   HorizontalPodAutoscaler   scaletestapp-memory       SuccessfulRescale                New size: 8; reason: memory resource utilization (percentage of request) above target
+2026-10-28T08:49:05Z   Deployment                scaletestapp              ScalingReplicaSet                (combined from similar events): Scaled up replica set scaletestapp-5f9b6b6ff from 7 to 8
+2026-10-28T08:49:06Z   ReplicaSet                scaletestapp-5f9b6b6ff    SuccessfulCreate                 Created pod: scaletestapp-5f9b6b6ff-6pwdw

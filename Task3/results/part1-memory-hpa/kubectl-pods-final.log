@@ -1,0 +1,9 @@
+NAME                           STATUS    RESTARTS   LAST_TERMINATION   CREATED
+scaletestapp-5f9b6b6ff-6pwdw   Running   0          <none>             2026-10-28T08:49:06Z
+scaletestapp-5f9b6b6ff-g8ng6   Running   0          <none>             2026-10-28T08:47:51Z
+scaletestapp-5f9b6b6ff-h22kv   Running   1          OOMKilled          2026-10-28T08:39:43Z
+scaletestapp-5f9b6b6ff-hbz92   Running   0          <none>             2026-10-28T08:46:06Z
+scaletestapp-5f9b6b6ff-rs9nd   Running   0          <none>             2026-10-28T08:43:20Z
+scaletestapp-5f9b6b6ff-rwn6f   Running   0          <none>             2026-10-28T08:42:51Z
+scaletestapp-5f9b6b6ff-x2d2t   Running   0          <none>             2026-10-28T08:44:21Z
+scaletestapp-5f9b6b6ff-xc8pz   Running   0          <none>             2026-10-28T08:45:21Z

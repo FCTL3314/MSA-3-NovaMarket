@@ -1,0 +1,54 @@
+[2026-10-28 08:56:00,040] f603962b1707/INFO/locust.main: Starting Locust 2.47.0
+[2026-10-28 08:56:00,040] f603962b1707/INFO/locust.main: Starting web interface at http://0.0.0.0:8082, press enter to open your default browser.
+[2026-10-28 08:56:00,044] f603962b1707/INFO/locust.main: Run time limit set to 110 seconds
+[2026-10-28 08:56:00,045] f603962b1707/INFO/locust.runners: Ramping to 1 users at a rate of 1.00 per second
+[2026-10-28 08:56:00,046] f603962b1707/INFO/locust.runners: All users spawned: {"LogisticsUser": 1} (1 total users)
+[2026-10-28 08:56:00,047] f603962b1707/INFO/circuit_breaker: [healthy ] GET /logistics/fast  -> 200 in 0.00s | upstream=127.0.0.1:9090 upstream_status=200 | CLOSED
+[2026-10-28 08:56:00,048] f603962b1707/INFO/circuit_breaker: [healthy ] GET /logistics/fast  -> 200 in 0.00s | upstream=127.0.0.1:9090 upstream_status=200 | CLOSED
+[2026-10-28 08:56:00,048] f603962b1707/INFO/circuit_breaker: [healthy ] GET /logistics/fast  -> 200 in 0.00s | upstream=127.0.0.1:9090 upstream_status=200 | CLOSED
+[2026-10-28 08:56:00,552] f603962b1707/INFO/circuit_breaker: [errors  ] GET /logistics/error -> 503 in 0.00s | upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=503, 503 | PRIMARY_FAILED
+[2026-10-28 08:56:00,554] f603962b1707/INFO/circuit_breaker: [errors  ] GET /logistics/error -> 503 in 0.00s | upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=503, 503 | PRIMARY_FAILED
+[2026-10-28 08:56:00,556] f603962b1707/INFO/circuit_breaker: [errors  ] GET /logistics/error -> 503 in 0.00s | upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=503, 503 | PRIMARY_FAILED
+[2026-10-28 08:56:00,557] f603962b1707/INFO/circuit_breaker: [errors  ] GET /logistics/error -> 503 in 0.00s | upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=503, 503 | PRIMARY_FAILED
+[2026-10-28 08:56:00,558] f603962b1707/INFO/circuit_breaker: [errors  ] GET /logistics/error -> 503 in 0.00s | upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=503, 503 | PRIMARY_FAILED
+[2026-10-28 08:56:00,559] f603962b1707/INFO/circuit_breaker: [errors  ] GET /logistics/error -> 503 in 0.00s | upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 | OPEN
+[2026-10-28 08:56:00,559] f603962b1707/WARNING/circuit_breaker: >>> CIRCUIT BREAKER OPEN: logistics is not called, fallback is returned
+[2026-10-28 08:56:00,560] f603962b1707/INFO/circuit_breaker: [errors  ] GET /logistics/error -> 503 in 0.00s | upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 | OPEN
+[2026-10-28 08:56:00,561] f603962b1707/INFO/circuit_breaker: [errors  ] GET /logistics/error -> 503 in 0.00s | upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 | OPEN
+[2026-10-28 08:56:01,065] f603962b1707/INFO/circuit_breaker: [open    ] GET /logistics/fast  -> 503 in 0.00s | upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 | OPEN
+[2026-10-28 08:56:01,067] f603962b1707/INFO/circuit_breaker: [open    ] GET /logistics/fast  -> 503 in 0.00s | upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 | OPEN
+[2026-10-28 08:56:01,069] f603962b1707/INFO/circuit_breaker: [open    ] GET /logistics/fast  -> 503 in 0.00s | upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 | OPEN
+[2026-10-28 08:56:01,572] f603962b1707/INFO/circuit_breaker: [recovery] waiting 31s for fail_timeout to expire...
+[2026-10-28 08:56:32,588] f603962b1707/INFO/circuit_breaker: [recovery] GET /logistics/fast  -> 200 in 0.01s | upstream=127.0.0.1:9090 upstream_status=200 | CLOSED
+[2026-10-28 08:56:32,589] f603962b1707/WARNING/circuit_breaker: >>> CIRCUIT BREAKER CLOSED: logistics responds again, calls restored
+[2026-10-28 08:56:32,591] f603962b1707/INFO/circuit_breaker: [recovery] GET /logistics/fast  -> 200 in 0.00s | upstream=127.0.0.1:9090 upstream_status=200 | CLOSED
+[2026-10-28 08:56:32,593] f603962b1707/INFO/circuit_breaker: [recovery] GET /logistics/fast  -> 200 in 0.00s | upstream=127.0.0.1:9090 upstream_status=200 | CLOSED
+[2026-10-28 08:56:36,113] f603962b1707/INFO/circuit_breaker: [timeouts] GET /logistics/slow  -> 503 in 3.02s | upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=504, 503 | PRIMARY_FAILED
+[2026-10-28 08:56:39,120] f603962b1707/INFO/circuit_breaker: [timeouts] GET /logistics/slow  -> 503 in 3.00s | upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=504, 503 | PRIMARY_FAILED
+[2026-10-28 08:56:42,126] f603962b1707/INFO/circuit_breaker: [timeouts] GET /logistics/slow  -> 503 in 3.01s | upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=504, 503 | PRIMARY_FAILED
+[2026-10-28 08:56:45,132] f603962b1707/INFO/circuit_breaker: [timeouts] GET /logistics/slow  -> 503 in 3.01s | upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=504, 503 | PRIMARY_FAILED
+[2026-10-28 08:56:48,139] f603962b1707/INFO/circuit_breaker: [timeouts] GET /logistics/slow  -> 503 in 3.01s | upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=504, 503 | PRIMARY_FAILED
+[2026-10-28 08:56:48,141] f603962b1707/INFO/circuit_breaker: [timeouts] GET /logistics/slow  -> 503 in 0.00s | upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 | OPEN
+[2026-10-28 08:56:48,141] f603962b1707/WARNING/circuit_breaker: >>> CIRCUIT BREAKER OPEN: logistics is not called, fallback is returned
+[2026-10-28 08:56:48,142] f603962b1707/INFO/circuit_breaker: [timeouts] GET /logistics/slow  -> 503 in 0.00s | upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 | OPEN
+[2026-10-28 08:56:48,142] f603962b1707/INFO/circuit_breaker: [timeouts] waiting 31s for fail_timeout to expire...
+[2026-10-28 08:57:19,154] f603962b1707/INFO/circuit_breaker: [recovery] GET /logistics/fast  -> 200 in 0.01s | upstream=127.0.0.1:9090 upstream_status=200 | CLOSED
+[2026-10-28 08:57:19,154] f603962b1707/WARNING/circuit_breaker: >>> CIRCUIT BREAKER CLOSED: logistics responds again, calls restored
+[2026-10-28 08:57:19,657] f603962b1707/INFO/circuit_breaker: [healthy ] GET /logistics/fast  -> 200 in 0.00s | upstream=127.0.0.1:9090 upstream_status=200 | CLOSED
+[2026-10-28 08:57:19,658] f603962b1707/INFO/circuit_breaker: [healthy ] GET /logistics/fast  -> 200 in 0.00s | upstream=127.0.0.1:9090 upstream_status=200 | CLOSED
+[2026-10-28 08:57:19,659] f603962b1707/INFO/circuit_breaker: [healthy ] GET /logistics/fast  -> 200 in 0.00s | upstream=127.0.0.1:9090 upstream_status=200 | CLOSED
+[2026-10-28 08:57:20,166] f603962b1707/INFO/circuit_breaker: [errors  ] GET /logistics/error -> 503 in 0.00s | upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=503, 503 | PRIMARY_FAILED
+[2026-10-28 08:57:20,169] f603962b1707/INFO/circuit_breaker: [errors  ] GET /logistics/error -> 503 in 0.00s | upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=503, 503 | PRIMARY_FAILED
+[2026-10-28 08:57:20,171] f603962b1707/INFO/circuit_breaker: [errors  ] GET /logistics/error -> 503 in 0.00s | upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=503, 503 | PRIMARY_FAILED
+[2026-10-28 08:57:20,173] f603962b1707/INFO/circuit_breaker: [errors  ] GET /logistics/error -> 503 in 0.00s | upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=503, 503 | PRIMARY_FAILED
+[2026-10-28 08:57:20,176] f603962b1707/INFO/circuit_breaker: [errors  ] GET /logistics/error -> 503 in 0.00s | upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=503, 503 | PRIMARY_FAILED
+[2026-10-28 08:57:20,177] f603962b1707/INFO/circuit_breaker: [errors  ] GET /logistics/error -> 503 in 0.00s | upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 | OPEN
+[2026-10-28 08:57:20,178] f603962b1707/WARNING/circuit_breaker: >>> CIRCUIT BREAKER OPEN: logistics is not called, fallback is returned
+[2026-10-28 08:57:20,179] f603962b1707/INFO/circuit_breaker: [errors  ] GET /logistics/error -> 503 in 0.00s | upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 | OPEN
+[2026-10-28 08:57:20,182] f603962b1707/INFO/circuit_breaker: [errors  ] GET /logistics/error -> 503 in 0.00s | upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 | OPEN
+[2026-10-28 08:57:20,688] f603962b1707/INFO/circuit_breaker: [open    ] GET /logistics/fast  -> 503 in 0.00s | upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 | OPEN
+[2026-10-28 08:57:20,692] f603962b1707/INFO/circuit_breaker: [open    ] GET /logistics/fast  -> 503 in 0.00s | upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 | OPEN
+[2026-10-28 08:57:20,698] f603962b1707/INFO/circuit_breaker: [open    ] GET /logistics/fast  -> 503 in 0.01s | upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 | OPEN
+[2026-10-28 08:57:21,201] f603962b1707/INFO/circuit_breaker: [recovery] waiting 31s for fail_timeout to expire...
+[2026-10-28 08:57:49,958] f603962b1707/INFO/locust.main: --run-time limit reached, stopping test
+[2026-10-28 08:57:49,985] f603962b1707/INFO/locust.main: --autoquit not specified, leaving web ui running indefinitely

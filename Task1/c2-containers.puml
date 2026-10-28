@@ -1,0 +1,125 @@
+@startuml
+!include <C4/C4_Container>
+
+LAYOUT_TOP_DOWN()
+skinparam wrapWidth 220
+skinparam maxMessageSize 220
+
+title NovaMarket — контейнерная диаграмма (C2), MVP на базе EDA
+
+Person(customer, "Покупатель", "Выбирает товары, оформляет и оплачивает заказы, отслеживает доставку")
+Person(seller, "Продавец", "Размещает товары, получает уведомления о новых заказах, видит их статусы")
+
+System_Ext(payment_gw, "Платёжный шлюз", "Внешний PSP: платёжная страница, токенизация и списание с привязанной карты, возвраты")
+System_Ext(logistics, "Логистический провайдер", "Внешняя/внутренняя служба доставки: заявки, трек-номера, статусы доставки")
+System_Ext(push, "Push / Email / SMS провайдер", "FCM, APNs, почтовый и SMS-шлюзы")
+
+System_Boundary(nova, "NovaMarket") {
+    Container(mobile, "Мобильное приложение", "iOS / Android", "Единственный клиентский канал MVP: каталог, корзина, оформление заказа, личный кабинет")
+    Container(seller_web, "Кабинет продавца", "SPA", "Управление товарами и остатками, список заказов продавца")
+
+    Container(gateway, "API Gateway", "NGINX", "Единая точка входа: TLS, маршрутизация, проверка JWT, rate limiting по каналам")
+    Container(egress, "Egress-прокси", "NGINX", "Вызовы внешних сервисов: таймауты, retry, circuit breaker")
+
+    Container(identity, "Identity Service", "Keycloak", "Регистрация, аутентификация, выдача JWT покупателям и продавцам")
+
+    Container(catalog, "Catalog Service", "Go", "Товары, категории, цены, фото; поиск и фильтрация по категории, цене, рейтингу; актуальное наличие")
+    ContainerDb(catalog_db, "Catalog DB + Search", "PostgreSQL + OpenSearch + Redis", "Карточки товаров; поисковый индекс с ценой, рейтингом и наличием; кэш")
+
+    Container(review, "Review Service", "Go", "Отзывы и рейтинг товаров")
+    ContainerDb(review_db, "Review DB", "PostgreSQL", "Отзывы, агрегированный рейтинг")
+
+    Container(cart, "Cart Service", "Go", "Корзина покупателя (заказ ещё не оформлен)")
+    ContainerDb(cart_db, "Cart Store", "Redis", "Корзины с TTL")
+
+    Container(order, "Order Service", "Java / Spring Boot", "Создание заказа, жизненный цикл и статусы заказа; участник Saga оформления заказа")
+    ContainerDb(order_db, "Order DB", "PostgreSQL", "Заказы, позиции, история статусов, outbox / inbox")
+
+    Container(inventory, "Inventory Service", "Java / Spring Boot", "Складские остатки продавцов, резервирование и снятие резерва")
+    ContainerDb(inventory_db, "Inventory DB", "PostgreSQL", "Остатки, резервы с TTL, outbox / inbox")
+
+    Container(payment, "Payment Service", "Java / Spring Boot", "Платёжные сессии, автосписание по привязанной карте (токен), возвраты")
+    ContainerDb(payment_db, "Payment DB", "PostgreSQL", "Платежи, токены карт (без PAN), outbox / inbox")
+
+    Container(delivery, "Delivery Service", "Go", "Заявки на доставку, трек-номера, статусы доставки от провайдера")
+    ContainerDb(delivery_db, "Delivery DB", "PostgreSQL", "Заявки, трек-номера, статусы, outbox / inbox")
+
+    Container(seller_svc, "Seller Service", "Go", "Профили продавцов (подключение без изменения архитектуры), заказы в разрезе продавца")
+    ContainerDb(seller_db, "Seller DB", "PostgreSQL", "Продавцы, проекция заказов продавца")
+
+    Container(notification, "Notification Service", "Go", "Уведомления покупателям и продавцам по событиям")
+
+    ContainerQueue(t_catalog, "catalog.events", "Kafka topic", "ProductCreated, ProductUpdated, ProductPriceChanged")
+    ContainerQueue(t_review, "review.events", "Kafka topic", "ProductRatingChanged")
+    ContainerQueue(t_inventory, "inventory.events", "Kafka topic", "StockChanged, StockReserved, StockReservationFailed, StockReleased, StockCommitted")
+    ContainerQueue(t_order, "order.events", "Kafka topic", "OrderCreated, OrderCancelled, OrderConfirmed, OrderStatusChanged")
+    ContainerQueue(t_payment, "payment.events", "Kafka topic", "PaymentInitiated, PaymentSucceeded, PaymentFailed, RefundSucceeded, RefundFailed")
+    ContainerQueue(t_delivery, "delivery.events", "Kafka topic", "DeliveryCreated, DeliveryCreationFailed, DeliveryStatusChanged")
+}
+
+' --- Синхронные взаимодействия ---
+Rel(customer, mobile, "Использует")
+Rel(seller, seller_web, "Использует")
+Rel(mobile, gateway, "REST", "HTTPS")
+Rel(seller_web, gateway, "REST", "HTTPS")
+Rel(mobile, payment_gw, "Ввод данных карты на платёжной странице", "HTTPS, redirect")
+
+Rel(gateway, identity, "Проверка токенов", "OIDC")
+Rel(gateway, catalog, "Каталог, фильтры, карточка", "REST")
+Rel(gateway, review, "Отзывы", "REST")
+Rel(gateway, cart, "Корзина", "REST")
+Rel(gateway, order, "Оформление и статус заказа", "REST")
+Rel(gateway, delivery, "Трекинг", "REST")
+Rel(gateway, seller_svc, "Кабинет продавца", "REST")
+Rel(payment_gw, gateway, "Webhook о результате платежа", "HTTPS")
+Rel(logistics, gateway, "Webhook о статусе доставки", "HTTPS")
+
+Rel(order, catalog, "Проверка актуальных цен при оформлении", "gRPC")
+
+Rel(catalog, catalog_db, "Чтение / запись")
+Rel(review, review_db, "Чтение / запись")
+Rel(cart, cart_db, "Чтение / запись")
+Rel(order, order_db, "Чтение / запись")
+Rel(inventory, inventory_db, "Чтение / запись")
+Rel(payment, payment_db, "Чтение / запись")
+Rel(delivery, delivery_db, "Чтение / запись")
+Rel(seller_svc, seller_db, "Чтение / запись")
+
+Rel(payment, egress, "Платежи, автосписания, возвраты", "HTTPS")
+Rel(delivery, egress, "Создание заявок", "HTTPS")
+Rel(notification, egress, "Отправка уведомлений", "HTTPS")
+Rel(egress, payment_gw, "API PSP", "HTTPS")
+Rel(egress, logistics, "API доставки", "HTTPS")
+Rel(egress, push, "API уведомлений", "HTTPS")
+
+' --- Публикация событий ---
+Rel(catalog, t_catalog, "Публикует")
+Rel(review, t_review, "Публикует")
+Rel(inventory, t_inventory, "Публикует")
+Rel(order, t_order, "Публикует")
+Rel(payment, t_payment, "Публикует")
+Rel(delivery, t_delivery, "Публикует")
+
+' --- Подписки на события ---
+Rel(t_catalog, cart, "ProductPriceChanged → обновить цены в корзинах")
+Rel(t_catalog, inventory, "ProductCreated → завести складскую позицию")
+Rel(t_review, catalog, "ProductRatingChanged → рейтинг для фильтров")
+Rel(t_inventory, catalog, "StockChanged → актуальное наличие")
+Rel(t_inventory, order, "StockReserved, StockReservationFailed, StockReleased, StockCommitted")
+Rel(t_inventory, payment, "StockReserved → создать платёж")
+Rel(t_order, inventory, "OrderCreated → резервирование")
+Rel(t_order, cart, "OrderCreated → очистить корзину")
+Rel(t_order, payment, "OrderCancelled → отменить платёжную сессию")
+Rel(t_order, notification, "OrderConfirmed, OrderCancelled, OrderStatusChanged")
+Rel(t_order, seller_svc, "OrderConfirmed, OrderStatusChanged → заказы продавца")
+Rel(t_payment, order, "PaymentInitiated, PaymentSucceeded, PaymentFailed, RefundSucceeded, RefundFailed")
+Rel(t_payment, inventory, "PaymentSucceeded → закрепить резерв; PaymentFailed → снять резерв")
+Rel(t_payment, delivery, "PaymentSucceeded → создать заявку на доставку")
+Rel(t_delivery, order, "DeliveryCreated, DeliveryCreationFailed, DeliveryStatusChanged")
+Rel(t_delivery, inventory, "DeliveryCreationFailed → снять резерв")
+Rel(t_delivery, payment, "DeliveryCreationFailed → возврат средств")
+Rel(t_delivery, notification, "DeliveryStatusChanged → уведомить покупателя")
+Rel(t_payment, notification, "RefundSucceeded, RefundFailed → уведомить покупателя")
+
+SHOW_LEGEND()
+@enduml

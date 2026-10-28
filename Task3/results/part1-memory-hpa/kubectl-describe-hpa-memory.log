@@ -1,0 +1,38 @@
+Name:                                                     scaletestapp-memory
+Namespace:                                                default
+Labels:                                                   <none>
+Annotations:                                              <none>
+CreationTimestamp:                                        Wed, 28 Oct 2026 11:39:49 +0300
+Reference:                                                Deployment/scaletestapp
+Metrics:                                                  ( current / target )
+  resource memory on pods  (as a percentage of request):  89% (18804150857m) / 80%
+Min replicas:                                             1
+Max replicas:                                             10
+Behavior:
+  Scale Up:
+    Stabilization Window: 0 seconds
+    Select Policy: Max
+    Policies:
+      - Type: Pods  Value: 4  Period: 15 seconds
+  Scale Down:
+    Stabilization Window: 60 seconds
+    Select Policy: Max
+    Policies:
+      - Type: Pods  Value: 2  Period: 30 seconds
+Deployment pods:    7 current / 8 desired
+Conditions:
+  Type            Status  Reason              Message
+  ----            ------  ------              -------
+  AbleToScale     True    SucceededRescale    the HPA controller was able to update the target scale to 8
+  ScalingActive   True    ValidMetricFound    the HPA was able to successfully calculate a replica count from memory resource utilization (percentage of request)
+  ScalingLimited  False   DesiredWithinRange  the desired count is within the acceptable range
+Events:
+  Type    Reason             Age    From                       Message
+  ----    ------             ----   ----                       -------
+  Normal  SuccessfulRescale  6m23s  horizontal-pod-autoscaler  New size: 2; reason: memory resource utilization (percentage of request) above target
+  Normal  SuccessfulRescale  5m53s  horizontal-pod-autoscaler  New size: 3; reason: memory resource utilization (percentage of request) above target
+  Normal  SuccessfulRescale  4m53s  horizontal-pod-autoscaler  New size: 4; reason: memory resource utilization (percentage of request) above target
+  Normal  SuccessfulRescale  3m53s  horizontal-pod-autoscaler  New size: 5; reason: memory resource utilization (percentage of request) above target
+  Normal  SuccessfulRescale  3m8s   horizontal-pod-autoscaler  New size: 6; reason: memory resource utilization (percentage of request) above target
+  Normal  SuccessfulRescale  83s    horizontal-pod-autoscaler  New size: 7; reason: memory resource utilization (percentage of request) above target
+  Normal  SuccessfulRescale  8s     horizontal-pod-autoscaler  New size: 8; reason: memory resource utilization (percentage of request) above target

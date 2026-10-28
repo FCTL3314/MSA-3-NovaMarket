@@ -1,0 +1,24 @@
+$ kubectl get --raw "/apis/custom.metrics.k8s.io/v1beta1" | jq ".resources[].name"
+namespaces/http_requests_per_second
+pods/http_requests_per_second
+
+$ kubectl get --raw "/apis/custom.metrics.k8s.io/v1beta1/namespaces/default/pods/*/http_requests_per_second"
+{
+    "kind": "MetricValueList",
+    "apiVersion": "custom.metrics.k8s.io/v1beta1",
+    "metadata": {},
+    "items": [
+        {
+            "describedObject": {
+                "kind": "Pod",
+                "namespace": "default",
+                "name": "scaletestapp-59796c6f85-9d6ds",
+                "apiVersion": "/v1"
+            },
+            "metricName": "http_requests_per_second",
+            "timestamp": "2026-10-28T09:02:55Z",
+            "value": "1200m",
+            "selector": null
+        }
+    ]
+}

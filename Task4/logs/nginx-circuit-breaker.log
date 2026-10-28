@@ -1,0 +1,126 @@
+2026/10/28 08:55:57 [notice] 1#1: js vm init njs: 0000FFFFBBA70A80
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /fast HTTP/1.0" 200 upstream=- upstream_status=- upstream_time=- request_time=0.000
+2026/10/28 08:56:00 [warn] 30#30: *1 upstream sent duplicate header line: "Content-Type: application/json", previous value: "Content-Type: text/plain", ignored while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /logistics/fast HTTP/1.1", upstream: "http://127.0.0.1:9090/fast", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /logistics/fast HTTP/1.1" 200 upstream=127.0.0.1:9090 upstream_status=200 upstream_time=0.000 request_time=0.000
+2026/10/28 08:56:00 [warn] 30#30: *1 upstream sent duplicate header line: "Content-Type: application/json", previous value: "Content-Type: text/plain", ignored while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /logistics/fast HTTP/1.1", upstream: "http://127.0.0.1:9090/fast", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /fast HTTP/1.0" 200 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /logistics/fast HTTP/1.1" 200 upstream=127.0.0.1:9090 upstream_status=200 upstream_time=0.000 request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /fast HTTP/1.0" 200 upstream=- upstream_status=- upstream_time=- request_time=0.000
+2026/10/28 08:56:00 [warn] 30#30: *1 upstream sent duplicate header line: "Content-Type: application/json", previous value: "Content-Type: text/plain", ignored while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /logistics/fast HTTP/1.1", upstream: "http://127.0.0.1:9090/fast", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /logistics/fast HTTP/1.1" 200 upstream=127.0.0.1:9090 upstream_status=200 upstream_time=0.000 request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /error HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /error HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /logistics/error HTTP/1.1" 503 upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=503, 503 upstream_time=0.000, 0.001 request_time=0.001
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /error HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /error HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /logistics/error HTTP/1.1" 503 upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=503, 503 upstream_time=0.000, 0.001 request_time=0.001
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /error HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /error HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /logistics/error HTTP/1.1" 503 upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=503, 503 upstream_time=0.000, 0.000 request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /error HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /error HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /logistics/error HTTP/1.1" 503 upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=503, 503 upstream_time=0.000, 0.000 request_time=0.001
+2026/10/28 08:56:00 [warn] 30#30: *1 upstream server temporarily disabled while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /logistics/error HTTP/1.1", upstream: "http://127.0.0.1:9090/error", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /error HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /error HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /logistics/error HTTP/1.1" 503 upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=503, 503 upstream_time=0.001, 0.000 request_time=0.001
+2026/10/28 08:56:00 [error] 30#30: *1 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /logistics/error HTTP/1.1", upstream: "http://logistics_backend/error", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /error HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /logistics/error HTTP/1.1" 503 upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 upstream_time=0.000, 0.000 request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /error HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+2026/10/28 08:56:00 [error] 30#30: *1 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /logistics/error HTTP/1.1", upstream: "http://logistics_backend/error", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /logistics/error HTTP/1.1" 503 upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 upstream_time=0.000, 0.000 request_time=0.000
+2026/10/28 08:56:00 [error] 30#30: *1 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /logistics/error HTTP/1.1", upstream: "http://logistics_backend/error", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /error HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:00 +0000] "GET /logistics/error HTTP/1.1" 503 upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 upstream_time=0.000, 0.000 request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:01 +0000] "GET /fast HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:01 +0000] "GET /logistics/fast HTTP/1.1" 503 upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 upstream_time=0.000, 0.000 request_time=0.000
+2026/10/28 08:56:01 [error] 30#30: *1 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /logistics/fast HTTP/1.1", upstream: "http://logistics_backend/fast", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:56:01 +0000] "GET /fast HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+2026/10/28 08:56:01 [error] 30#30: *1 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /logistics/fast HTTP/1.1", upstream: "http://logistics_backend/fast", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:56:01 +0000] "GET /logistics/fast HTTP/1.1" 503 upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 upstream_time=0.001, 0.000 request_time=0.001
+127.0.0.1 [28/Oct/2026:08:56:01 +0000] "GET /fast HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:01 +0000] "GET /logistics/fast HTTP/1.1" 503 upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 upstream_time=0.000, 0.000 request_time=0.001
+2026/10/28 08:56:01 [error] 30#30: *1 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /logistics/fast HTTP/1.1", upstream: "http://logistics_backend/fast", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:56:32 +0000] "GET /fast HTTP/1.0" 200 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:32 +0000] "GET /logistics/fast HTTP/1.1" 200 upstream=127.0.0.1:9090 upstream_status=200 upstream_time=0.001 request_time=0.001
+2026/10/28 08:56:32 [warn] 30#30: *1 upstream sent duplicate header line: "Content-Type: application/json", previous value: "Content-Type: text/plain", ignored while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /logistics/fast HTTP/1.1", upstream: "http://127.0.0.1:9090/fast", host: "localhost:8080"
+2026/10/28 08:56:32 [warn] 30#30: *1 upstream sent duplicate header line: "Content-Type: application/json", previous value: "Content-Type: text/plain", ignored while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /logistics/fast HTTP/1.1", upstream: "http://127.0.0.1:9090/fast", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:56:32 +0000] "GET /fast HTTP/1.0" 200 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:32 +0000] "GET /logistics/fast HTTP/1.1" 200 upstream=127.0.0.1:9090 upstream_status=200 upstream_time=0.000 request_time=0.001
+127.0.0.1 [28/Oct/2026:08:56:32 +0000] "GET /fast HTTP/1.0" 200 upstream=- upstream_status=- upstream_time=- request_time=0.000
+2026/10/28 08:56:32 [warn] 30#30: *1 upstream sent duplicate header line: "Content-Type: application/json", previous value: "Content-Type: text/plain", ignored while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /logistics/fast HTTP/1.1", upstream: "http://127.0.0.1:9090/fast", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:56:32 +0000] "GET /logistics/fast HTTP/1.1" 200 upstream=127.0.0.1:9090 upstream_status=200 upstream_time=0.000 request_time=0.000
+2026/10/28 08:56:36 [error] 30#30: *1 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /logistics/slow HTTP/1.1", upstream: "http://127.0.0.1:9090/slow", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:56:36 +0000] "GET /slow HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:36 +0000] "GET /logistics/slow HTTP/1.1" 503 upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=504, 503 upstream_time=3.013, 0.002 request_time=3.014
+127.0.0.1 [28/Oct/2026:08:56:38 +0000] "GET /slow HTTP/1.0" 200 upstream=- upstream_status=- upstream_time=- request_time=5.006
+2026/10/28 08:56:39 [error] 30#30: *1 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /logistics/slow HTTP/1.1", upstream: "http://127.0.0.1:9090/slow", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:56:39 +0000] "GET /slow HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:39 +0000] "GET /logistics/slow HTTP/1.1" 503 upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=504, 503 upstream_time=3.002, 0.000 request_time=3.002
+127.0.0.1 [28/Oct/2026:08:56:41 +0000] "GET /slow HTTP/1.0" 200 upstream=- upstream_status=- upstream_time=- request_time=5.000
+2026/10/28 08:56:42 [error] 30#30: *1 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /logistics/slow HTTP/1.1", upstream: "http://127.0.0.1:9090/slow", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:56:42 +0000] "GET /slow HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:42 +0000] "GET /logistics/slow HTTP/1.1" 503 upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=504, 503 upstream_time=3.003, 0.001 request_time=3.004
+127.0.0.1 [28/Oct/2026:08:56:44 +0000] "GET /slow HTTP/1.0" 200 upstream=- upstream_status=- upstream_time=- request_time=5.004
+2026/10/28 08:56:45 [error] 30#30: *1 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /logistics/slow HTTP/1.1", upstream: "http://127.0.0.1:9090/slow", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:56:45 +0000] "GET /slow HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:45 +0000] "GET /logistics/slow HTTP/1.1" 503 upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=504, 503 upstream_time=3.003, 0.000 request_time=3.003
+127.0.0.1 [28/Oct/2026:08:56:47 +0000] "GET /slow HTTP/1.0" 200 upstream=- upstream_status=- upstream_time=- request_time=5.002
+2026/10/28 08:56:48 [warn] 30#30: *1 upstream server temporarily disabled while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /logistics/slow HTTP/1.1", upstream: "http://127.0.0.1:9090/slow", host: "localhost:8080"
+2026/10/28 08:56:48 [error] 30#30: *1 upstream timed out (110: Operation timed out) while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /logistics/slow HTTP/1.1", upstream: "http://127.0.0.1:9090/slow", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:56:48 +0000] "GET /slow HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:48 +0000] "GET /logistics/slow HTTP/1.1" 503 upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=504, 503 upstream_time=3.004, 0.001 request_time=3.005
+2026/10/28 08:56:48 [error] 30#30: *1 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /logistics/slow HTTP/1.1", upstream: "http://logistics_backend/slow", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:56:48 +0000] "GET /slow HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:48 +0000] "GET /logistics/slow HTTP/1.1" 503 upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 upstream_time=0.000, 0.000 request_time=0.000
+2026/10/28 08:56:48 [error] 30#30: *1 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /logistics/slow HTTP/1.1", upstream: "http://logistics_backend/slow", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:56:48 +0000] "GET /slow HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:48 +0000] "GET /logistics/slow HTTP/1.1" 503 upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 upstream_time=0.000, 0.000 request_time=0.000
+127.0.0.1 [28/Oct/2026:08:56:50 +0000] "GET /slow HTTP/1.0" 200 upstream=- upstream_status=- upstream_time=- request_time=5.003
+127.0.0.1 [28/Oct/2026:08:57:19 +0000] "GET /fast HTTP/1.0" 200 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:57:19 +0000] "GET /logistics/fast HTTP/1.1" 200 upstream=127.0.0.1:9090 upstream_status=200 upstream_time=0.001 request_time=0.001
+2026/10/28 08:57:19 [warn] 30#30: *1 upstream sent duplicate header line: "Content-Type: application/json", previous value: "Content-Type: text/plain", ignored while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /logistics/fast HTTP/1.1", upstream: "http://127.0.0.1:9090/fast", host: "localhost:8080"
+2026/10/28 08:57:19 [warn] 30#30: *1 upstream sent duplicate header line: "Content-Type: application/json", previous value: "Content-Type: text/plain", ignored while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /logistics/fast HTTP/1.1", upstream: "http://127.0.0.1:9090/fast", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:57:19 +0000] "GET /fast HTTP/1.0" 200 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:57:19 +0000] "GET /logistics/fast HTTP/1.1" 200 upstream=127.0.0.1:9090 upstream_status=200 upstream_time=0.000 request_time=0.000
+127.0.0.1 [28/Oct/2026:08:57:19 +0000] "GET /fast HTTP/1.0" 200 upstream=- upstream_status=- upstream_time=- request_time=0.000
+2026/10/28 08:57:19 [warn] 30#30: *1 upstream sent duplicate header line: "Content-Type: application/json", previous value: "Content-Type: text/plain", ignored while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /logistics/fast HTTP/1.1", upstream: "http://127.0.0.1:9090/fast", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:57:19 +0000] "GET /logistics/fast HTTP/1.1" 200 upstream=127.0.0.1:9090 upstream_status=200 upstream_time=0.000 request_time=0.000
+2026/10/28 08:57:19 [warn] 30#30: *1 upstream sent duplicate header line: "Content-Type: application/json", previous value: "Content-Type: text/plain", ignored while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /logistics/fast HTTP/1.1", upstream: "http://127.0.0.1:9090/fast", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:57:19 +0000] "GET /fast HTTP/1.0" 200 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:57:19 +0000] "GET /logistics/fast HTTP/1.1" 200 upstream=127.0.0.1:9090 upstream_status=200 upstream_time=0.000 request_time=0.000
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /error HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /error HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /logistics/error HTTP/1.1" 503 upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=503, 503 upstream_time=0.000, 0.001 request_time=0.001
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /error HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /error HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /logistics/error HTTP/1.1" 503 upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=503, 503 upstream_time=0.000, 0.001 request_time=0.000
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /error HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /error HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /logistics/error HTTP/1.1" 503 upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=503, 503 upstream_time=0.000, 0.000 request_time=0.001
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /error HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /error HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /logistics/error HTTP/1.1" 503 upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=503, 503 upstream_time=0.000, 0.000 request_time=0.001
+2026/10/28 08:57:20 [warn] 30#30: *1 upstream server temporarily disabled while reading response header from upstream, client: 127.0.0.1, server: , request: "GET /logistics/error HTTP/1.1", upstream: "http://127.0.0.1:9090/error", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /error HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /error HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /logistics/error HTTP/1.1" 503 upstream=127.0.0.1:9090, 127.0.0.1:9091 upstream_status=503, 503 upstream_time=0.001, 0.000 request_time=0.001
+2026/10/28 08:57:20 [error] 30#30: *1 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /logistics/error HTTP/1.1", upstream: "http://logistics_backend/error", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /error HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /logistics/error HTTP/1.1" 503 upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 upstream_time=0.000, 0.000 request_time=0.000
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /error HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /logistics/error HTTP/1.1" 503 upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 upstream_time=0.000, 0.000 request_time=0.001
+2026/10/28 08:57:20 [error] 30#30: *1 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /logistics/error HTTP/1.1", upstream: "http://logistics_backend/error", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /error HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /logistics/error HTTP/1.1" 503 upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 upstream_time=0.001, 0.000 request_time=0.000
+2026/10/28 08:57:20 [error] 30#30: *1 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /logistics/error HTTP/1.1", upstream: "http://logistics_backend/error", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /fast HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+2026/10/28 08:57:20 [error] 30#30: *1 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /logistics/fast HTTP/1.1", upstream: "http://logistics_backend/fast", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /logistics/fast HTTP/1.1" 503 upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 upstream_time=0.000, 0.000 request_time=0.001
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /fast HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+2026/10/28 08:57:20 [error] 30#30: *1 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /logistics/fast HTTP/1.1", upstream: "http://logistics_backend/fast", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /logistics/fast HTTP/1.1" 503 upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 upstream_time=0.001, 0.000 request_time=0.000
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /fast HTTP/1.0" 503 upstream=- upstream_status=- upstream_time=- request_time=0.000
+2026/10/28 08:57:20 [error] 30#30: *1 no live upstreams while connecting to upstream, client: 127.0.0.1, server: , request: "GET /logistics/fast HTTP/1.1", upstream: "http://logistics_backend/fast", host: "localhost:8080"
+127.0.0.1 [28/Oct/2026:08:57:20 +0000] "GET /logistics/fast HTTP/1.1" 503 upstream=127.0.0.1:9091, logistics_backend upstream_status=503, 502 upstream_time=0.001, 0.000 request_time=0.000
